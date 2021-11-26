@@ -1,0 +1,148 @@
+.top-nav {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.top-nav a {
+    display: flex;
+    align-items: center;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px 14px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.top-nav a:hover {
+    background-color: #676767;
+    color: black;
+}
+
+.top-nav a.active {
+    background-color: rgba(248, 147, 32, 0.89);
+    color: white;
+}
+
+.top-nav a.right {
+    margin-left: auto;
+    padding-right: 30px;
+}
+
+.top-nav a.left {
+    padding-left: 30px;
+}
+
+.logo-image{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    padding-right: 7px;
+    transition: 0.3s;
+}
+.logo-image:hover {
+    width: 33px;
+    height: 33px;
+}
+h1 {
+    color: #333434;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+h2 {
+    color: #ffffff;
+    padding-left: 20px;
+    line-height: 10px;
+}
+.avatar {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 100px;
+}
+.heading {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+.category {
+    font-weight: bold;
+}
+.info {
+    margin-left: 20px;
+}
+.container-account {
+    display: flex;
+}
+.item-75 {
+    flex-basis: 75%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 5px;
+    font-size: large;
+}
+.item-25 {
+    flex-basis: 25%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 5px;
+}
+.item-10 {
+    flex-basis: 5%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-left: 20px;
+}
+.item-avatar {
+    margin-top: 20px;
+}
+.item-25.right {
+    font-weight: bold;
+    font-size: large;
+    text-align: right;
+}
+.info-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+.info-img.edit{
+    margin-left: auto;
+    cursor: pointer;
+    padding-right: 30px;
+}
+.info-img:hover {
+    width: 43px;
+    height: 43px;
+}
+.container-account.top {
+    background: rgb(229,74,5);
+    background: linear-gradient(0deg, rgba(229,74,5,1) 0%, rgba(255,165,0,1) 100%);
+    height: 300px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.container-heading-account {
+    padding-left: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    transition: 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
