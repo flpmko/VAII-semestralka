@@ -1,7 +1,7 @@
-<script lang="javascript">
-    let editCredentials = false;
-    let editContact = false;
-    let editAddress = false;
+<script>
+    var editCredentials = false;
+    var editContact = false;
+    var editAddress = false;
 
     function handleClick(text) {
         if (text == "credentials") {
@@ -42,6 +42,32 @@
         <p>dátum narodenia: </p>
         <p>pohlavie: </p>
     </div>
+    {{-- @if ($editCredentials == true)
+    <div class="item-75">
+        <p>
+            <input id="name" type="text" value="Fero">
+            <label for="name"></label>
+        </p>
+        <p>
+            <input id="surname" type="text" value="Mrkvička">
+            <label for="surname"></label>
+        </p>
+        <p>
+            <input id="username" type="text" value="ferko">
+            <label for="username"></label>
+        </p>
+        <p>
+            <input id="date" type="date" value="1998-04-01">
+            <label for="date"></label>
+        </p>
+        <p>
+            <input id="male" type="radio" value="muž" name="sex" checked>
+            <label for="male">muž</label>
+            <input id="female" type="radio" value="žena" name="sex">
+            <label for="female">žena</label>
+        </p>
+    </div>
+    @else --}}
     <div class="item-75">
         <p>
             <input id="name" type="text" value="Fero" disabled>
@@ -66,11 +92,12 @@
             <label for="female">žena</label>
         </p>
     </div>
+    {{-- @endif --}}
 </div>
 <div class="container-heading-account">
     <img src="../imgs/icons/email-off.png" class="info-img" alt="email icon">
     <h3>KONTAKT</h3>
-    <img src="../imgs/icons/edit.png" alt="edit icon" class="info-img edit">
+    <img src="../imgs/icons/edit.png" alt="edit icon" class="info-img edit" onclick="handleClick('contact')">
 </div>
 <div class="container-account">
     <div class="item-25 right">
@@ -91,7 +118,7 @@
 <div class="container-heading-account">
     <img src="../imgs/icons/address-off.png" class="info-img" alt="user icon">
     <h3>ADRESA</h3>
-    <img src="../imgs/icons/edit.png" alt="edit icon" class="info-img edit">
+    <img src="../imgs/icons/edit.png" alt="edit icon" class="info-img edit" onclick="handleClick('address')">
 </div>
 <div class="container-account">
     <div class="item-25 right">
