@@ -1,6 +1,6 @@
 @extends("layouts.master")
 @section('obsah')
-<div class="container">
+<div class="container-home">
     <img src="../imgs/home.jpg" class="home-img" alt="sound board">
     <div class="centered welcome-text">Vitaj ferko!</div>
 </div>

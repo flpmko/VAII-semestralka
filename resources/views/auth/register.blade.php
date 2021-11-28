@@ -33,7 +33,7 @@
             <input id="password_confirmation" type="password" name="password_confirmation" required />
         </div>
 
-        <div class="container signin">
+        <div class="signin">
             <button class="registerbtn" type="submit">
                 Register
             </button>
