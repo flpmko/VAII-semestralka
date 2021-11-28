@@ -1,22 +1,3 @@
-<script>
-    var editCredentials = false;
-    var editContact = false;
-    var editAddress = false;
-
-    function handleClick(text) {
-        if (text == "credentials") {
-            console.log(editCredentials);
-            editCredentials = !editCredentials;
-            console.log(editCredentials);
-        } else if (text == "contact") {
-            editContact = !editContact;
-        } else {
-            editAddress = !editAddress;
-        }
-    }
-
-</script>
-
 @extends("layouts.master")
 @section('obsah')
 <div class="container-account top">
@@ -39,11 +20,11 @@
         <p>krstné meno: </p>
         <p>priezvisko: </p>
         <p>používateľské meno: </p>
+        <p>heslo: </p>
         <p>dátum narodenia: </p>
         <p>pohlavie: </p>
     </div>
-    {{-- @if ($editCredentials == true)
-    <div class="item-75">
+    <div class="item-75" id="credentials-enabled">
         <p>
             <input id="name" type="text" value="Fero">
             <label for="name"></label>
@@ -57,18 +38,21 @@
             <label for="username"></label>
         </p>
         <p>
+            <input id="password" type="password" value="12345678">
+            <label for="password"></label>
+        </p>
+        <p>
             <input id="date" type="date" value="1998-04-01">
             <label for="date"></label>
         </p>
         <p>
-            <input id="male" type="radio" value="muž" name="sex" checked>
+            <input id="male" type="radio" value="muž" name="sex-en" checked>
             <label for="male">muž</label>
-            <input id="female" type="radio" value="žena" name="sex">
+            <input id="female" type="radio" value="žena" name="sex-en">
             <label for="female">žena</label>
         </p>
     </div>
-    @else --}}
-    <div class="item-75">
+    <div class="item-75" id="credentials-disabled">
         <p>
             <input id="name" type="text" value="Fero" disabled>
             <label for="name"></label>
@@ -82,17 +66,21 @@
             <label for="username"></label>
         </p>
         <p>
+            <input id="password" type="password" value="12345678" disabled>
+            <label for="password"></label>
+        </p>
+        <p>
             <input id="date" type="date" value="1998-04-01" disabled>
             <label for="date"></label>
         </p>
         <p>
-            <input id="male" type="radio" value="muž" name="sex" checked disabled>
+            <input id="male" type="radio" value="muž" name="sex-dis" checked disabled>
             <label for="male">muž</label>
-            <input id="female" type="radio" value="žena" name="sex" disabled>
+            <input id="female" type="radio" value="žena" name="sex-dis" disabled>
             <label for="female">žena</label>
         </p>
     </div>
-    {{-- @endif --}}
+    
 </div>
 <div class="container-heading-account">
     <img src="../imgs/icons/email-off.png" class="info-img" alt="email icon">
@@ -104,7 +92,17 @@
         <p>mail: </p>
         <p>tel. číslo: </p>
     </div>
-    <div class="item-75">
+    <div class="item-75" id="contact-enabled">
+        <p>
+            <input id="email" type="text" value="ferko@gmail.com">
+            <label for="email"></label>
+        </p>
+        <p>
+            <input id="phone" type="text" value="0907 123 456">
+            <label for="phone"></label>
+        </p>
+    </div>
+    <div class="item-75" id="contact-disabled">
         <p>
             <input id="email" type="text" value="ferko@gmail.com" disabled>
             <label for="email"></label>
@@ -128,7 +126,29 @@
         <p>PSČ: </p>
         <p>štát: </p>
     </div>
-    <div class="item-75">
+    <div class="item-75" id="address-enabled">
+        <p>
+            <input id="street" type="text" value="Národná 12">
+            <label for="street"></label>
+        </p>
+        <p>
+            <input id="city" type="text" value="Horná dolná">
+            <label for="city"></label>
+        </p>
+        <p>
+            <input id="State" type="text" value="Prešovský">
+            <label for="State"></label>
+        </p>
+        <p>
+            <input id="PSC" type="text" value="12345">
+            <label for="PSC"></label>
+        </p>
+        <p>
+            <input id="country" type="text" value="Slovensko">
+            <label for="country"></label>
+        </p>
+    </div>
+    <div class="item-75" id="address-disabled">
         <p>
             <input id="street" type="text" value="Národná 12" disabled>
             <label for="street"></label>
@@ -151,4 +171,5 @@
         </p>
     </div>
 </div>
+<script src="{{ URL::asset('js/account.js') }}"></script>
 @endsection

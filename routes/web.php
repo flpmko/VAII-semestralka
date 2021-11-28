@@ -18,3 +18,5 @@ Route::view('/items','items')->name('items-page');
 Route::view('/rentals','rentals')->name('rentals-page');
 Route::view('/sets','sets')->name('sets-page');
 Route::view('/account','account')->name('account-page');
+
+require __DIR__.'/auth.php';
