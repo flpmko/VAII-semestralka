@@ -1,4 +1,7 @@
+.new-item select,
 .new-item input[type="text"],
+.new-item input[type="number"],
+.new-item input[type="file"],
 .new-item input[type="password"],
 .new-item input[type="email"] {
     width: 100%;
@@ -11,8 +14,50 @@
     transition: 0.5s;
 }
 
+.new-item input[type="file"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background-color: solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.new-item select:hover,
 .new-item input[type="text"]:hover,
+.new-item input[type="number"]:hover,
 .new-item input[type="password"]:hover,
 .new-item input[type="email"]:hover {
     box-shadow: 0 0 10px 4px rgba(54, 54, 54, 0.3);
+}
+
+.new-item input[type="file"]:hover {
+    cursor: pointer;
+}
+
+.form-group {
+    display: flex;
+    gap: 50px;
+}
+
+.form-item {
+    flex-grow: 1;
+}
+
+.new-item-form {
+    display: flex;
+    font-size: xx-large;
+    font-weight: bolder;
+    height: 500px;
+    background: linear-gradient(
+        0deg,
+        rgba(229, 74, 5, 1) 0%,
+        rgba(255, 165, 0, 1) 100%
+    );
+    min-height: 100vh;
+    /* align-items: center; */
+    justify-content: center;
 }

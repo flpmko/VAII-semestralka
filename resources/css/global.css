@@ -12,6 +12,15 @@ body {
     font-size: xx-large;
     font-weight: bolder;
 }
+.centered-content {
+    display: flex;
+    min-height: 90vh;
+    margin-top: 20px;
+    /* align-items: center; */
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bolder;
+}
 .footer {
     background-color: #333434;
     height: 150px;

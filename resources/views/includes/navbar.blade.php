@@ -7,9 +7,6 @@
     <a href="{{ route('rentals-page') }}" class="{{ Request::routeIs('rentals-page') ? 'active' : '' }}">PÔŽIČKY</a>
     <a href="{{ route('sets-page') }}" class="{{ Request::routeIs('sets-page') ? 'active' : '' }}">SETY</a>
 
-
-
-
     <div id="slide">
         <a id="toggle" href="{{ route('account-page') }}"
             class="{{ Request::routeIs('account-page') ? 'active right account-section' : 'right account-section' }}">
@@ -21,7 +18,7 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 @auth
-                    <button id="logOutButton" type="submit">
+                    <button id="logOutButton" type="submit" class="log-out-button">
                         Odhlásiť
                     </button>
                 @endauth

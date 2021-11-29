@@ -5,15 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class LaravelCrud extends Controller
+class ItemController extends Controller
 {
-    function index()
+    function items()
     {
         $data = array(
-            'list' => DB::table('crud')->get()
+            'list' => DB::table('items')->get()
         );
 
-        return view('crud.index', $data);
+        return view('items', $data);
     }
 
     function add(Request $request)
@@ -22,7 +22,8 @@ class LaravelCrud extends Controller
             'name' => 'required',
             'quantity' => 'required',
             'category' => 'required',
-            'type' => 'required'
+            'type' => 'required',
+            'image' => 'required'
         ]);
 
         $query = DB::table('items')->insert([
@@ -36,11 +37,7 @@ class LaravelCrud extends Controller
             'image' => $request->input('image')
         ]);
 
-        if ($query) {
-            return back()->with('succes', 'Success!');
-        } else {
-            return back()->with('fail', 'Fail!');
-        }
+        return redirect('items');
     }
 
     function edit($id)
@@ -49,11 +46,12 @@ class LaravelCrud extends Controller
             ->where('id', $id)
             ->first();
         $data = [
-            'Info' => $row,
-            'Title' => 'Edit'
+            'Info' => $row
         ];
 
-        return view('crud.edit', $data);
+        $js_code = 'console.log(' . json_encode($data, JSON_HEX_TAG) . 
+');';
+        return view('edit', $data);
     }
 
     function update(Request $request)
@@ -62,7 +60,8 @@ class LaravelCrud extends Controller
             'name' => 'required',
             'quantity' => 'required',
             'category' => 'required',
-            'type' => 'required'
+            'type' => 'required',
+            'image' => 'required'
         ]);
 
         $updating = DB::table('items')
@@ -78,7 +77,7 @@ class LaravelCrud extends Controller
                 'image' => $request->input('image')
             ]);
 
-        return redirect('crud');
+        return redirect('items');
     }
 
     function delete($id)
