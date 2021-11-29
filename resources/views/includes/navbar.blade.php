@@ -13,24 +13,29 @@
             <img id="account-icon" class="logo-image" alt="account icon" src="../imgs/icons/user-off.png" />
             ÚČET
         </a>
-        
+
         <div class="hide">
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 @auth
-                    <button id="logOutButton" type="submit" class="log-out-button">
-                        Odhlásiť
-                    </button>
+                    <div class="logout-container">
+                        <img src="../imgs/icons/log-out.png" alt="log-out" class="logo-image-small">
+                        <button id="logOutButton" type="submit">
+                            Odhlásiť
+                        </button>
+                    </div>
                 @endauth
 
             </form>
 
             @guest
                 <a id="logInButton" href="login">
+                    <img src="../imgs/icons/login.png" alt="login" class="logo-image-small">
                     Prihlásiť
                 </a>
 
                 <a id="regButton" href="register">
+                    <img src="../imgs/icons/register.png" alt="register" class="logo-image-small">
                     Registrovať
                 </a>
             @endguest

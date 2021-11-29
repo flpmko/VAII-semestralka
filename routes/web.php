@@ -26,11 +26,12 @@ Route::get('items', [ItemController::class, 'items'])->name('items-page');
 Route::post('add', [ItemController::class, 'add']);
 Route::get('edit/{id}', [ItemController::class, 'edit']);
 Route::post('update', [ItemController::class, 'update'])->name('update');
+Route::get('delete/{id}', [ItemController::class, 'delete']);
 
 Route::get('crud', [LaravelCrud::class, 'index']);
 // Route::post('add', [LaravelCrud::class, 'add']);
 // Route::get('edit/{id}', [LaravelCrud::class, 'edit']);
 // Route::post('update', [LaravelCrud::class, 'update'])->name('update');
-Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
+// Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
 
 require __DIR__.'/auth.php';

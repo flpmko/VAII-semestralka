@@ -23,7 +23,11 @@
             <tbody>
                 @foreach ($list as $item)
                     <tr>
-                        <td><a href="edit/{{$item->id}}">Upraviť</a></td>
+                        <td><a href="delete/{{ $item->id }}">
+                                <img src="../imgs/icons/remove.png" alt="remove" class="table-icon">
+                            </a><a href="edit/{{ $item->id }}">
+                                <img src="../imgs/icons/pencil.png" alt="pencil" class="table-icon">
+                            </a></td>
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->quantity }}</td>

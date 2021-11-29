@@ -86,6 +86,6 @@ class ItemController extends Controller
             ->where('id', $id)
             ->delete();
 
-        return redirect('crud');
+        return redirect('items');
     }
 }
