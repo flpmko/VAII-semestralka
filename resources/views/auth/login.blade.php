@@ -1,7 +1,8 @@
 @extends("layouts.master")
 @section('obsah')
-<div class="logContainer">
+<div class="login-form">
     <form method="POST" action="{{ route('login') }}">
+        <h1>Prihlásenie</h1>
         @csrf
 
         <!-- Email Address -->
@@ -34,7 +35,7 @@
                 </a>
             @endif
 
-            <button>
+            <button type="submit">
                 Log in
             </button>
         </div>

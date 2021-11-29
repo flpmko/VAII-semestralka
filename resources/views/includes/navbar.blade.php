@@ -7,26 +7,36 @@
     <a href="{{ route('rentals-page') }}" class="{{ Request::routeIs('rentals-page') ? 'active' : '' }}">PÔŽIČKY</a>
     <a href="{{ route('sets-page') }}" class="{{ Request::routeIs('sets-page') ? 'active' : '' }}">SETY</a>
 
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
-        @auth
-            <button id="logButton">
-                Log out
-            </button>
-        @endauth
 
-    </form>
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-            <button id="logButton">
-                Log in
-            </button>
 
-    </form>
+    <div id="slide">
+        <a id="toggle" href="{{ route('account-page') }}"
+            class="{{ Request::routeIs('account-page') ? 'active right account-section' : 'right account-section' }}">
+            <img class="logo-image" alt="account icon" src="../imgs/icons/user-off.png" />
+            ÚČET
+        </a>
+        <div class="hide">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                @auth
+                    <button id="logButton" type="submit">
+                        Odhlásiť
+                    </button>
+                @endauth
 
-    <a href="{{ route('account-page') }}" class="{{ Request::routeIs('account-page') ? 'active right' : 'right' }}">
-        <img class="logo-image" alt="account icon" src="../imgs/icons/user-off.png" />
-        ÚČET
-    </a>
+            </form>
+
+            @guest
+                <a id="logButton" href="login">
+                    Prihlásiť
+                </a>
+
+                <a id="regButton" href="register">
+                    Registrovať
+                </a>
+            @endguest
+        </div>
+    </div>
+
 </div>
