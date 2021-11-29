@@ -13,14 +13,15 @@
     <div id="slide">
         <a id="toggle" href="{{ route('account-page') }}"
             class="{{ Request::routeIs('account-page') ? 'active right account-section' : 'right account-section' }}">
-            <img class="logo-image" alt="account icon" src="../imgs/icons/user-off.png" />
+            <img id="account-icon" class="logo-image" alt="account icon" src="../imgs/icons/user-off.png" />
             ÚČET
         </a>
+        
         <div class="hide">
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 @auth
-                    <button id="logButton" type="submit">
+                    <button id="logOutButton" type="submit">
                         Odhlásiť
                     </button>
                 @endauth
@@ -28,7 +29,7 @@
             </form>
 
             @guest
-                <a id="logButton" href="login">
+                <a id="logInButton" href="login">
                     Prihlásiť
                 </a>
 
@@ -38,5 +39,6 @@
             @endguest
         </div>
     </div>
+    <script src="{{ URL::asset('js/app.js') }}"></script>
 
 </div>

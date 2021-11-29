@@ -1,7 +1,7 @@
 @extends("layouts.master")
 @section('obsah')
 <div class="container-account top">
-    <div class="item-75">
+    <div class="item-75 account-greet">
         <h1 class="">Môj účet</h1>
         <h2 class="">Ahoj ferko!</h2>
         <h2 class="">Odtiaľto si môžeš menežovať svoj profil a osobné údaje.</h2>

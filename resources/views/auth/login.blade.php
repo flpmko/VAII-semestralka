@@ -1,45 +1,41 @@
 @extends("layouts.master")
 @section('obsah')
-<div class="login-form">
-    <form method="POST" action="{{ route('login') }}">
-        <h1>Prihlásenie</h1>
-        @csrf
+    <div class="login-form">
+        <form method="POST" action="{{ route('login') }}">
+            <h1>Prihlásenie</h1>
+            @csrf
 
-        <!-- Email Address -->
 
-        <div>
-            <label for="email"> E-mail</label>
+            <div class="container-login">
+                <!-- Email Address -->
+                <label for="email" class="login-label">E-mail</label>
+                <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="e-mail" required autofocus />
 
-            <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus />
-        </div>
+                <!-- Password -->
+                <label for="password" class="login-label">Heslo</label>
+                <input id="password" type="password" name="password" placeholder="heslo" required autocomplete="current-password" />
 
-        <!-- Password -->
-        <div>
-            <label for="password"> Password</label>
+                <div>
+                    @if (Route::has('password.request'))
+                        <a class="underline text-sm text-gray-600 hover:text-gray-900"
+                            href="{{ route('password.request') }}">
+                            Zabudli ste heslo?
+                        </a>
+                    @endif
 
-            <input id="password" type="password" name="password" required autocomplete="current-password" />
-        </div>
+                    <button type="submit">Prihlásiť sa</button>
+                </div>
 
-        <!-- Remember Me -->
-        <div>
-            <label for="remember_me">
-                <input id=" remember_me" type="checkbox" name="remember">
-                <span>Remember me</span>
-            </label>
-        </div>
+                <!-- Remember Me -->
+                <div>
+                    <label for="remember_me">
+                        <input id=" remember_me" type="checkbox" name="remember" checked>
+                        <span>Zapamätaj si ma</span>
+                    </label>
+                </div>
+            </div>
 
-        <div>
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                    Forgout your password?
-                </a>
-            @endif
 
-            <button type="submit">
-                Log in
-            </button>
-        </div>
-
-    </form>
-</div>
+        </form>
+    </div>
 @endsection

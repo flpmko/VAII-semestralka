@@ -2155,6 +2155,8 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./navbar */ "./resources/js/navbar.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -2185,6 +2187,25 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/navbar.js":
+/*!********************************!*\
+  !*** ./resources/js/navbar.js ***!
+  \********************************/
+/***/ (() => {
+
+setSrcByClass("account-icon", "../imgs/icons/user-black.png");
+
+function setSrcByClass(elementId, src) {
+  var anchor = document.getElementById("toggle");
+
+  if (anchor.className.includes("active")) {
+    var img = document.getElementById(elementId);
+    img.setAttribute("src", src);
+  }
+}
 
 /***/ }),
 

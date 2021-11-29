@@ -4,45 +4,39 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <h1>Registrácia</h1>
-            <p>Please fill in this form to create an account.</p>
+            <p>Prosím vyplňte nasledovné údaje pre vytvorenie účtu</p>
             <hr>
-            <div>
-                <label for="name"><b>Name</b></label>
 
-                <input id="name" type="text" name="name" value="{{ old('name') }}" required autofocus />
-            </div>
+                <div>
+                    <label for="name"><b>Meno</b></label>
+                    <input id="name" type="text" name="name" value="{{ old('name') }}" placeholder="Jožko Mrkvička" required autofocus />
+                </div>
 
-            <!-- Email Address -->
-            <div>
-                <label for="email"><b>E-mail</b></label>
+                <!-- Email Address -->
+                <div>
+                    <label for="email"><b>E-mail</b></label>
+                    <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="e-mail@gmail.com" required />
+                </div>
+                <!-- Password -->
+                <div>
+                    <label for="password"> <b>Heslo</b></label>
+                    <input id="password" type="password" name="password" placeholder="heslo" required autocomplete="new-password" />
+                </div>
+                <!-- Confirm Password -->
+                <div>
+                    <label for="password_confirmation"><b>Potvrďte heslo</b></label>
+                    <input id="password_confirmation" type="password" name="password_confirmation" placeholder="heslo" required />
+                </div>
+                <div class="signin">
+                    <button class="registerbtn" type="submit">
+                        Registruj sa
+                    </button>
 
-                <input id="email" type="email" name="email" value="{{ old('email') }}" required />
-            </div>
+                    <a href="{{ route('login') }}">
+                        Už ste zaregistrovaný/á?
+                    </a>
 
-            <!-- Password -->
-            <div>
-                <label for="password"> <b>Password </b></label>
-
-                <input id="password" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div>
-                <label for="password_confirmation"><b>Confirm password </b></label>
-
-                <input id="password_confirmation" type="password" name="password_confirmation" required />
-            </div>
-
-            <div class="signin">
-                <button class="registerbtn" type="submit">
-                    Register
-                </button>
-
-                <a href="{{ route('login') }}">
-                    Already registered?
-                </a>
-
-            </div>
+                </div>
         </form>
     </div>
 @endsection
