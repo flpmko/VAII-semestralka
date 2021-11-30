@@ -62,3 +62,16 @@ Na tomto mieste môže používateľ spravovať svoje údaje.
 Po stlačení ikony ceruzky môže používateľ editovať svoje údaje.
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/account2.png)
+
+## Prihlasovanie
+### Prihlasovacie "tlačidlá"
+
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/login.png) ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/logout.png)
+
+### Prihlasovacia obrazovka
+
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/login-page.png)
+
+### Registračná obrazovka
+
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/register-page.png)
