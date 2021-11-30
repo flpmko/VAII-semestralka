@@ -1,8 +1,8 @@
 @extends("layouts.master")
 @section('obsah')
     <div class="search-bar">
-        <button class="btn-items"><a href="new-item">PRIDAŤ</a></button>
-        <button class="btn-items">POŽIČAŤ</button>
+        <button type="button" class="btn-items"><a href="new-item">PRIDAŤ</a></button>
+        <button type="button" class="btn-items">POŽIČAŤ</button>
         <input type="search" class="search-bar-input" placeholder="vyhľadaj položku">
         <img src="../imgs/icons/search.png" alt="search icon" class="search-bar-icon">
     </div>

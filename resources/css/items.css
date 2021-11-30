@@ -2,6 +2,9 @@ th {
     border-bottom: 1px solid #4b4b4b;
     background-color: white;
 }
+tr{
+    transition: 0.3s;
+}
 tr:hover {
     background-color: #ffd5a4;
 }

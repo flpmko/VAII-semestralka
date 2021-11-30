@@ -2157,6 +2157,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./navbar */ "./resources/js/navbar.js");
 
+__webpack_require__(/*! ./new-item */ "./resources/js/new-item.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -2217,6 +2219,46 @@ function setSrcByClass(elementId, src) {
   if (anchor.className.includes("active")) {
     var img = document.getElementById(elementId);
     img.setAttribute("src", src);
+  }
+}
+
+/***/ }),
+
+/***/ "./resources/js/new-item.js":
+/*!**********************************!*\
+  !*** ./resources/js/new-item.js ***!
+  \**********************************/
+/***/ (() => {
+
+// setClassByValue("docs", "docs-button");
+// setClassByValue("image", "image-button");
+window.clearInputFile = function (fileId) {
+  var f = document.getElementById(fileId);
+
+  if (f.value) {
+    try {
+      f.value = "";
+    } catch (err) {}
+  }
+};
+
+window.selectItemByValue = function (elementId, value) {
+  var element = document.getElementById(elementId);
+
+  for (var i = 0; i < elemnent.options.length; i++) {
+    if (element.options[i].value === value) {
+      element.selectedIndex = i;
+      break;
+    }
+  }
+};
+
+function setClassByValue(elementId, buttonId) {
+  var element = document.getElementById(elementId);
+
+  if (element.value == null) {
+    var button = document.getElementById(buttonId);
+    button.setAttribute("class", "hidden form-icon");
   }
 }
 

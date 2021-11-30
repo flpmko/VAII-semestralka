@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <form action="add" method="POST">
+        <form action="add" method="POST" enctype=multipart/form-data>
             @csrf
             <h3>Pridanie nového zariadenia do skladu</h3>
             <hr>
@@ -35,8 +35,8 @@
 
             <div class="form-item">
                 <label for="category">Určenie</label>
-                <select name="category" id="category" value="{{ old('category') }}">
-                    <option value="select" selected>vybrať</option>
+                <select name="category" id="category">
+                    <option value="" selected disabled hidden>vyberte určenie</option>
                     <option value="audio">audio</option>
                     <option value="video">video</option>
                     <option value="svetlá">svetlá</option>
@@ -47,11 +47,12 @@
             <div class="form-item">
                 <label for="type">Typ</label>
                 <select name="type" id="type" value="{{ old('type') }}">
-                    <option value="select" selected>vybrať</option>
+                    <option value="" selected disabled hidden>vyberte typ</option>
                     <optgroup label="audio">
                         <option value="mic">mic</option>
                         <option value="PA">PA</option>
                         <option value="dibox">dibox</option>
+                        <option value="stagebox">stagebox</option>
                     <optgroup label="video">
                         <option value="obrazovka">obrazovka</option>
                         <option value="projektor">projektor</option>
@@ -88,13 +89,30 @@
 
             <div class="form-item">
                 <label for="docs">Manuál</label>
-                <input id="docs" type="file" class="form-control" name="docs" value="{{ old('docs') }}">
-                <span style="color: red">@error('docs'){{ $message }} @enderror</span>
+                <div class="file-group">
+                    <div class="form-item">
+                        <input id="docs" type="file" class="form-control" name="docs" value="{{ old('docs') }}"><span
+                            style="color: red">@error('docs'){{ $message }} @enderror</span>
+                    </div>
+                    <div class="form-item">
+                        <button id="docs-button" type="button" onclick="clearInputFile('docs')"><img src="../imgs/icons/remove.png"
+                                alt="remove" class="form-icon"></button>
+                    </div>
+                </div>
             </div>
+
             <div class="form-item">
                 <label for="image">Obrázok</label>
-                <input id="image" type="file" class="form-control" name="image" value="{{ old('image') }}">
-                <span style="color: red">@error('image'){{ $message }} @enderror</span>
+                <div class="file-group">
+                    <div class="form-item">
+                        <input id="image" type="file" class="form-control" name="image" value="{{ old('image') }}">
+                        <span style="color: red">@error('image'){{ $message }} @enderror</span>
+                    </div>
+                    <div class="form-item">
+                        <button id="image-button" type="button" onclick="clearInputFile('image')"><img src="../imgs/icons/remove.png"
+                                alt="remove" class="form-icon"></button>
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
@@ -102,4 +120,5 @@
             </div>
         </form>
     </div>
+    <script src="{{ URL::asset('js/app.js') }}"></script>
 @endsection

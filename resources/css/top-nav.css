@@ -16,6 +16,7 @@
     padding: 10px 14px;
     text-decoration: none;
     font-size: 17px;
+    transition: 0.3s;
 }
 
 .top-nav button {
@@ -33,6 +34,7 @@
     border-radius: 0;
     margin: 0;
     height: 50px;
+    transition: 0.3s;
 }
 
 .top-nav a:hover,
@@ -91,13 +93,13 @@
     display: block;
 }
 
-/* .log-out-button {
-    border-radius: 0;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    height: auto;
-} */
+.log-out-button {
+    width: 150px;
+}
+
+.log-out-button .logo-image-small{
+    padding-left: 10px;
+}
 
 /* animation */
 

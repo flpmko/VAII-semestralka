@@ -18,12 +18,10 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 @auth
-                    <div class="logout-container">
-                        <img src="../imgs/icons/log-out.png" alt="log-out" class="logo-image-small">
-                        <button id="logOutButton" type="submit">
+                        <button id="logOutButton" type="submit" class="log-out-button">
+                            <img src="../imgs/icons/log-out.png" alt="log-out" class="logo-image-small">
                             Odhlásiť
                         </button>
-                    </div>
                 @endauth
 
             </form>

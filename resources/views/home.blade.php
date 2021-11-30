@@ -2,7 +2,7 @@
 @section('obsah')
 <div class="container-home">
     <img src="../imgs/home.jpg" class="home-img" alt="sound board">
-    <div class="centered welcome-text">Vitaj ferko!</div>
+    <div class="centered welcome-text">Vitaj{{Auth::user() ? ' ' . Auth::user()->name : ''}}!</div>
 </div>
 <div class="container-heading">
     <h3>NAPOSLEDY POŽIČANÉ</h3>

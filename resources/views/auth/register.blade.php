@@ -10,12 +10,14 @@
                 <div>
                     <label for="name"><b>Meno</b></label>
                     <input id="name" type="text" name="name" value="{{ old('name') }}" placeholder="Jožko Mrkvička" required autofocus />
+                    <span style="color: black; font-style: italic">@error('name'){{ $message }} @enderror</span>
                 </div>
 
                 <!-- Email Address -->
                 <div>
                     <label for="email"><b>E-mail</b></label>
                     <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="e-mail@gmail.com" required />
+                    <span style="color: black; font-style: italic">@error('email'){{ $message }} @enderror</span>
                 </div>
                 <!-- Password -->
                 <div>
@@ -26,6 +28,7 @@
                 <div>
                     <label for="password_confirmation"><b>Potvrďte heslo</b></label>
                     <input id="password_confirmation" type="password" name="password_confirmation" placeholder="heslo" required />
+                    <span style="color: black; font-style: italic">@error('password'){{ $message }} @enderror</span>
                 </div>
                 <div class="signin">
                     <button class="registerbtn" type="submit">

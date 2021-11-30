@@ -5,9 +5,10 @@
         rgba(229, 74, 5, 1) 0%,
         rgba(255, 165, 0, 1) 100%
     );
-    min-height: 70vh;
+    min-height: 90vh;
     /* align-items: center; */
     justify-content: center;
+    padding-top: 100px;
 }
 
 .login-form span {
@@ -20,10 +21,12 @@
         0deg,
         rgba(229, 74, 5, 1) 0%,
         rgba(255, 165, 0, 1) 100%
-    );
-    min-height: 90vh;
-    /* align-items: center; */
-    justify-content: center;
+        );
+        min-height: 90vh;
+        /* align-items: center; */
+        justify-content: center;
+        padding-top: 50px;
+        padding-bottom: 100px;
 }
 
 .register-form a {
@@ -60,7 +63,9 @@
     box-shadow: 0 0 10px 4px rgba(54, 54, 54, 0.3);
 }
 
-button {
+.login-form button[type="submit"], 
+.register-form button[type="submit"], 
+.new-item button[type="submit"] {
     background-color: #2d5500;
     color: white;
     padding: 14px 20px;
@@ -72,7 +77,9 @@ button {
     transition: 0.5s;
 }
 
-button:hover {
+.login-form button[type="submit"]:hover, 
+.register-form button[type="submit"]:hover, 
+.new-item button[type="submit"]:hover {
     background-color: #509600;
     box-shadow: 0 0 10px 4px rgba(54, 54, 54, 0.3);
 }

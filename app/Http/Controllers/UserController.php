@@ -5,25 +5,28 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ItemController extends Controller
+class UserController extends Controller
 {
     function items()
     {
         $data = array(
-            'list' => DB::table('items')->get()
+            'list' => DB::table('users')->get()
         );
 
-        return view('items', $data);
+        return view('account', $data);
     }
 
     function add(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:60'],
-            'quantity' => ['required', 'int'],
-            'category' => ['required', 'string', 'max:10'],
-            'type' => ['required', 'string', 'max:20'],
-            'image' => ['required', 'file']
+            'name' => 'required',
+            'surname' => 'required',
+            'nick' => 'required',
+            'nick' => 'required',
+            'quantity' => 'required',
+            'category' => 'required',
+            'type' => 'required',
+            'image' => 'required'
         ]);
 
         $query = DB::table('items')->insert([
@@ -37,20 +40,18 @@ class ItemController extends Controller
             'image' => $request->input('image')
         ]);
 
-        return redirect('items');
+        return redirect('/');
     }
 
     function edit($id)
     {
-        $row = DB::table('items')
+        $row = DB::table('users')
             ->where('id', $id)
             ->first();
         $data = [
             'Info' => $row
         ];
-
-        // $js_code = 'console.log(' . json_encode($data, JSON_HEX_TAG) . ');';
-
+        
         return view('edit', $data);
     }
 

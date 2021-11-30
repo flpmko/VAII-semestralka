@@ -41,6 +41,13 @@
 .form-group {
     display: flex;
     gap: 50px;
+    align-items: center;
+}
+
+.file-group{
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .form-item {
@@ -60,4 +67,33 @@
     min-height: 100vh;
     /* align-items: center; */
     justify-content: center;
+}
+
+.new-item span{
+    font-size: medium;
+    padding: 0;
+    margin: 0;
+}
+.new-item {
+    padding-bottom: 50px;
+}
+.new-item button[type="submit"],
+.edit-item button[type="submit"] {
+    font-weight: bold;
+}
+.form-item button[type="button"]{
+    background: none;
+    background-color: none;
+    border: none;
+    
+}
+.form-icon{
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.hidden {
+    display: none;
 }

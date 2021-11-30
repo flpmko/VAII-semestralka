@@ -3,7 +3,7 @@
 <div class="container-account top">
     <div class="item-75 account-greet">
         <h1 class="">Môj účet</h1>
-        <h2 class="">Ahoj ferko!</h2>
+        <h2 class="">Ahoj{{Auth::user() ? ' ' . Auth::user()->name : ''}}!</h2>
         <h2 class="">Odtiaľto si môžeš menežovať svoj profil a osobné údaje.</h2>
     </div>
     <div class="item-25 item-avatar">
@@ -34,7 +34,7 @@
             <label for="surname"></label>
         </p>
         <p>
-            <input id="username" type="text" value="ferko">
+            <input id="username" type="text" value="{{Auth::user() ? Auth::user()->name : 'NA'}}">
             <label for="username"></label>
         </p>
         <p>
@@ -62,7 +62,7 @@
             <label for="surname"></label>
         </p>
         <p>
-            <input id="username" type="text" value="ferko" disabled>
+            <input id="username" type="text" value="{{Auth::user() ? Auth::user()->name : 'NA'}}" disabled>
             <label for="username"></label>
         </p>
         <p>
@@ -94,7 +94,7 @@
     </div>
     <div class="item-75" id="contact-enabled">
         <p>
-            <input id="email" type="text" value="ferko@gmail.com">
+            <input id="email" type="text" value="{{Auth::user() ? Auth::user()->email : 'NA'}}">
             <label for="email"></label>
         </p>
         <p>
@@ -104,7 +104,7 @@
     </div>
     <div class="item-75" id="contact-disabled">
         <p>
-            <input id="email" type="text" value="ferko@gmail.com" disabled>
+            <input id="email" type="text" value="{{Auth::user() ? Auth::user()->email : 'NA'}}" disabled>
             <label for="email"></label>
         </p>
         <p>
