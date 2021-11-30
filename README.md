@@ -59,4 +59,6 @@ Na tomto mieste môže používateľ spravovať svoje údaje.
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/account1.png)
 
+Po stlačení ikony ceruzky môže používateľ editovať svoje údaje.
+
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/account2.png)
