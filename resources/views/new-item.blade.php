@@ -16,7 +16,11 @@
 
         <form action="add" method="POST" enctype=multipart/form-data>
             @csrf
-            <h3>Pridanie nového zariadenia do skladu</h3>
+            <div class="form-group">
+                <a href="/items"><img src="../imgs/icons/back.png" alt="back" class="edit-page-back"></a>
+                <h3>Pridanie nového zariadenia do skladu</h3>
+            </div>
+            
             <hr>
             <div class="form-group">
                 <div class="form-item">

@@ -6,7 +6,7 @@
         <input type="search" class="search-bar-input" placeholder="vyhľadaj položku">
         <img src="../imgs/icons/search.png" alt="search icon" class="search-bar-icon">
     </div>
-    <div style="overflow-x: auto">
+    <div style="overflow-x: auto; min-height: 80vh;">
         <table>
             <thead>
                 <th></th>
