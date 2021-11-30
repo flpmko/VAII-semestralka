@@ -31,7 +31,8 @@
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->quantity }}</td>
-                        <td><label><input type="number" class="small" value="0"></label></td>
+                        <td><label><input type="number" class="small" value="0" min="0"
+                                    max="{{ $item->quantity }}"></label></td>
                         <td>{{ $item->category }}</td>
                         <td>{{ $item->type }}</td>
                         <td>{{ $item->inputs }}</td>

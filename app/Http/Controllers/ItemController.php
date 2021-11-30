@@ -23,7 +23,7 @@ class ItemController extends Controller
             'quantity' => ['required', 'int'],
             'category' => ['required', 'string', 'max:10'],
             'type' => ['required', 'string', 'max:20'],
-            'image' => ['required', 'file']
+            'image' => ['required', 'mimes:jpeg,bmp,png']
         ]);
 
         $query = DB::table('items')->insert([
@@ -34,7 +34,7 @@ class ItemController extends Controller
             'inputs' => $request->input('inputs'),
             'outputs' => $request->input('outputs'),
             'docs' => $request->input('docs'),
-            'image' => $request->input('image')
+            'image' => $request->file('image')
         ]);
 
         return redirect('items');
@@ -57,11 +57,11 @@ class ItemController extends Controller
     function update(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'quantity' => 'required',
-            'category' => 'required',
-            'type' => 'required',
-            'image' => 'required'
+            'name' => ['required', 'string', 'max:60'],
+            'quantity' => ['required', 'int'],
+            'category' => ['required', 'string', 'max:10'],
+            'type' => ['required', 'string', 'max:20'],
+            'image' => ['required', 'mimes:jpeg,bmp,png']
         ]);
 
         $updating = DB::table('items')
@@ -74,7 +74,7 @@ class ItemController extends Controller
                 'inputs' => $request->input('inputs'),
                 'outputs' => $request->input('outputs'),
                 'docs' => $request->input('docs'),
-                'image' => $request->input('image')
+                'image' => $request->file('image')
             ]);
 
         return redirect('items');
