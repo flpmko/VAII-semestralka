@@ -33,6 +33,14 @@ V tejto podstránke sa taktiež vykonáva vytvorenie pôžičky. Užívateľ si 
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory.png)
 
+Po stlačení tlačidla 'Pridať', sa zobrazí maska na pridanie nového zariadenia do databázy.
+
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/new-item.png)
+
+Pri každom zariadení má používateľ k dispozícií 2 tlačidlá, jedno na vymazanie zariadenia z databázy a druhé na úpravu vlastností zariadenia.
+
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/edit-item.png)
+
 
 ### Pôžičky
 Tu sú zobrazené všetky pôžičky používateľa. Aktívne aj minulé, jasne odlíšené.
@@ -49,4 +57,6 @@ Informácie o webe, návod na použitie a podobne.
 ### Účet
 Na tomto mieste môže používateľ spravovať svoje údaje.
 
-![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/account.png)
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/account1.png)
+
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/account2.png)
