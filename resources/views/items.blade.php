@@ -23,8 +23,10 @@
             <tbody>
                 @foreach ($list as $item)
                     <tr>
-                        <td><a href="delete/{{ $item->id }}">
+                        <td><a id="delete-icon" href="delete/{{ $item->id }}">
+                            <button class="items-dummy-button" onclick="confirmAction('vymazať')">
                                 <img src="../imgs/icons/remove.png" alt="remove" class="table-icon">
+                            </button>
                             </a><a href="edit/{{ $item->id }}">
                                 <img src="../imgs/icons/pencil.png" alt="pencil" class="table-icon">
                             </a></td>
@@ -43,4 +45,5 @@
             </tbody>
         </table>
     </div>
+    <script src="{{ URL::asset('js/app.js') }}"></script>
 @endsection

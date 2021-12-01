@@ -2232,6 +2232,8 @@ function setSrcByClass(elementId, src) {
 
 // setClassByValue("docs", "docs-button");
 // setClassByValue("image", "image-button");
+var confirmed = false;
+
 window.clearInputFile = function (fileId) {
   var f = document.getElementById(fileId);
 
@@ -2261,6 +2263,17 @@ function setClassByValue(elementId, buttonId) {
     button.setAttribute("class", "hidden form-icon");
   }
 }
+
+window.confirmAction = function (action) {
+  this.confirmed = confirm("Naoazaj chcete " + action + " ?");
+
+  if (!confirmed) {
+    var anchor = document.getElementById('delete-icon');
+    anchor.setAttribute('href', '/items');
+  }
+}; // window.confirmAction = function (action, item) {
+//     confirm("Naoazaj chcete " + action + " " + item + " ?");
+// }
 
 /***/ }),
 

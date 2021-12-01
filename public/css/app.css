@@ -804,4 +804,9 @@ span.password {
     width: 45px;
     height: 45px;
 }
+.items-dummy-button {
+    background-color: none;
+    border: none;
+    background: none;
+}
 
