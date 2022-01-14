@@ -13,7 +13,9 @@
 <div class="container-heading-account">
     <img src="../imgs/icons/user-off.png" class="info-img" alt="user icon">
     <h3>OSOBNÉ ÚDAJE</h3>
-    <img src="../imgs/icons/edit.png" alt="edit icon" class="info-img edit" onclick="handleClick('credentials')">
+    <a class="info-img edit" href="/account-edit/{{Auth::user()->id}}">
+        <img src="../imgs/icons/edit.png" alt="edit icon" class="info-img edit">
+    </a>
 </div>
 <div class="container-account">
     <div class="item-25 right">
@@ -24,59 +26,32 @@
         <p>dátum narodenia: </p>
         <p>pohlavie: </p>
     </div>
-    <div class="item-75" id="credentials-enabled">
-        <p>
-            <input id="name" type="text" value="Fero">
-            <label for="name"></label>
-        </p>
-        <p>
-            <input id="surname" type="text" value="Mrkvička">
-            <label for="surname"></label>
-        </p>
-        <p>
-            <input id="username" type="text" value="{{Auth::user() ? Auth::user()->name : 'NA'}}">
-            <label for="username"></label>
-        </p>
-        <p>
-            <input id="password" type="password" value="12345678">
-            <label for="password"></label>
-        </p>
-        <p>
-            <input id="date" type="date" value="1998-04-01">
-            <label for="date"></label>
-        </p>
-        <p>
-            <input id="male" type="radio" value="muž" name="sex-en" checked>
-            <label for="male">muž</label>
-            <input id="female" type="radio" value="žena" name="sex-en">
-            <label for="female">žena</label>
-        </p>
-    </div>
+    
     <div class="item-75" id="credentials-disabled">
         <p>
-            <input id="name" type="text" value="Fero" disabled>
+            <input id="name" type="text" value="{{Auth::user() ? Auth::user()->name : 'NA'}}" disabled>
             <label for="name"></label>
         </p>
         <p>
-            <input id="surname" type="text" value="Mrkvička" disabled>
+            <input id="surname" type="text" value="{{Auth::user() ? Auth::user()->surname : 'NA'}}" disabled>
             <label for="surname"></label>
         </p>
         <p>
-            <input id="username" type="text" value="{{Auth::user() ? Auth::user()->name : 'NA'}}" disabled>
+            <input id="username" type="text" value="{{Auth::user() ? Auth::user()->username : 'NA'}}" disabled>
             <label for="username"></label>
         </p>
         <p>
-            <input id="password" type="password" value="12345678" disabled>
+            <input id="password" type="password" value="{{Auth::user() ? Auth::user()->password : 'NA'}}" disabled>
             <label for="password"></label>
         </p>
         <p>
-            <input id="date" type="date" value="1998-04-01" disabled>
+            <input id="birthdate" type="birthdate" value="{{Auth::user() ? Auth::user()->birthdate : 'NA'}}" disabled>
             <label for="date"></label>
         </p>
         <p>
-            <input id="male" type="radio" value="muž" name="sex-dis" checked disabled>
+            <input id="male" type="radio" value="MALE" name="sex-dis" {{Auth::user()->sex == 'MALE' ? 'checked' : ''}} disabled>
             <label for="male">muž</label>
-            <input id="female" type="radio" value="žena" name="sex-dis" disabled>
+            <input id="female" type="radio" value="FEMALE" name="sex-dis" {{Auth::user()->sex == 'FEMALE' ? 'checked' : ''}} disabled>
             <label for="female">žena</label>
         </p>
     </div>
@@ -85,30 +60,20 @@
 <div class="container-heading-account">
     <img src="../imgs/icons/email-off.png" class="info-img" alt="email icon">
     <h3>KONTAKT</h3>
-    <img src="../imgs/icons/edit.png" alt="edit icon" class="info-img edit" onclick="handleClick('contact')">
 </div>
 <div class="container-account">
     <div class="item-25 right">
         <p>mail: </p>
         <p>tel. číslo: </p>
     </div>
-    <div class="item-75" id="contact-enabled">
-        <p>
-            <input id="email" type="text" value="{{Auth::user() ? Auth::user()->email : 'NA'}}">
-            <label for="email"></label>
-        </p>
-        <p>
-            <input id="phone" type="text" value="0907 123 456">
-            <label for="phone"></label>
-        </p>
-    </div>
+    
     <div class="item-75" id="contact-disabled">
         <p>
             <input id="email" type="text" value="{{Auth::user() ? Auth::user()->email : 'NA'}}" disabled>
             <label for="email"></label>
         </p>
         <p>
-            <input id="phone" type="text" value="0907 123 456" disabled>
+            <input id="phone" type="text" value="{{Auth::user() ? Auth::user()->phone : 'NA'}}" disabled>
             <label for="phone"></label>
         </p>
     </div>
@@ -116,7 +81,6 @@
 <div class="container-heading-account">
     <img src="../imgs/icons/address-off.png" class="info-img" alt="user icon">
     <h3>ADRESA</h3>
-    <img src="../imgs/icons/edit.png" alt="edit icon" class="info-img edit" onclick="handleClick('address')">
 </div>
 <div class="container-account">
     <div class="item-25 right">
@@ -126,50 +90,29 @@
         <p>PSČ: </p>
         <p>štát: </p>
     </div>
-    <div class="item-75" id="address-enabled">
-        <p>
-            <input id="street" type="text" value="Národná 12">
-            <label for="street"></label>
-        </p>
-        <p>
-            <input id="city" type="text" value="Horná dolná">
-            <label for="city"></label>
-        </p>
-        <p>
-            <input id="State" type="text" value="Prešovský">
-            <label for="State"></label>
-        </p>
-        <p>
-            <input id="PSC" type="text" value="12345">
-            <label for="PSC"></label>
-        </p>
-        <p>
-            <input id="country" type="text" value="Slovensko">
-            <label for="country"></label>
-        </p>
-    </div>
+    
     <div class="item-75" id="address-disabled">
         <p>
-            <input id="street" type="text" value="Národná 12" disabled>
+            <input id="street" type="text" value="{{Auth::user() ? Auth::user()->street : 'NA'}}" disabled>
             <label for="street"></label>
         </p>
         <p>
-            <input id="city" type="text" value="Horná dolná" disabled>
+            <input id="city" type="text" value="{{Auth::user() ? Auth::user()->city : 'NA'}}" disabled>
             <label for="city"></label>
         </p>
         <p>
-            <input id="State" type="text" value="Prešovský" disabled>
-            <label for="State"></label>
+            <input id="county" type="text" value="{{Auth::user() ? Auth::user()->county : 'NA'}}" disabled>
+            <label for="county"></label>
         </p>
         <p>
-            <input id="PSC" type="text" value="12345" disabled>
-            <label for="PSC"></label>
+            <input id="psc" type="text" value="{{Auth::user() ? Auth::user()->psc : 'NA'}}" disabled>
+            <label for="psc"></label>
         </p>
         <p>
-            <input id="country" type="text" value="Slovensko" disabled>
-            <label for="country"></label>
+            <input id="state" type="text" value="{{Auth::user() ? Auth::user()->state : 'NA'}}" disabled>
+            <label for="state"></label>
         </p>
     </div>
 </div>
-<script src="{{ URL::asset('js/account.js') }}"></script>
+{{-- <script src="{{ URL::asset('js/account.js') }}"></script> --}}
 @endsection

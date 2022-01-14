@@ -49,9 +49,7 @@ class ItemController extends Controller
             'Info' => $row
         ];
 
-        // $js_code = 'console.log(' . json_encode($data, JSON_HEX_TAG) . ');';
-
-        return view('edit', $data);
+        return view('item-edit', $data);
     }
 
     function update(Request $request)
