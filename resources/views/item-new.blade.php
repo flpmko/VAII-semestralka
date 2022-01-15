@@ -120,7 +120,7 @@
                     <label for="image">*Obrázok</label>
                     <div class="file-group">
                         <div class="form-item">
-                            <input id="image" type="file" class="form-control" name="image">
+                            <input id="image" type="file" class="form-control" name="image" accept=".jpg,.png,.jpeg,.bmp">
                         </div>
                         <div class="form-item">
                             <button id="image-button" type="button" onclick="clearInputFile('image')"><img

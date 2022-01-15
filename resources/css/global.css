@@ -16,7 +16,6 @@ body {
     display: flex;
     min-height: 90vh;
     margin-top: 20px;
-    /* align-items: center; */
     justify-content: center;
     font-size: xx-large;
     font-weight: bolder;
@@ -28,6 +27,8 @@ body {
     text-align: center;
     padding: 5px;
     width: 100%;
+    /* position: fixed; */
+    bottom: 0;
 }
 .mailto {
     color: #c7c7c7;

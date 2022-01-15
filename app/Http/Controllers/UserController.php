@@ -30,14 +30,15 @@ class UserController extends Controller
 
     function update(Request $request)
     {
+
         $request->validate([
-            'name' => ['required', 'string', 'max:60']
-            // 'surname' => ['required', 'string', 'max:60'],
-            // 'username' => ['required', 'string', 'max:60'],
-            // 'birthdate' => 'required',
-            // 'sex' => 'required',
-            // 'email' => 'required',
-            // 'password' => 'required'
+            'name' => ['required', 'string', 'max:60'],
+            'surname' => ['required', 'string', 'max:60'],
+            'username' => ['required', 'string', 'max:60'],
+            'birthdate' => 'required',
+            'sex' => 'required',
+            'email' => 'required',
+            'password' => 'required'
         ]);
 
         $updating = DB::table('users')

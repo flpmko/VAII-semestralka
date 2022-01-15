@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <form action="{{ route('account-update') }}" method="POST" enctype=multipart/form-data>
+    <form action="{{ route('account-update') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="container-account top">
             <div class="item-75 account-greet">
@@ -42,32 +42,31 @@
                 <p>pohlavie: </p>
             </div>
             <div class="item-25 input" id="credentials">
+                <input type="hidden" name="cid" value="{{ $Info->id }}">
                 <p>
-                    <input id="name" type="text" value="{{ old('name') ? old('name') : $Info->name }}">
+                    <input id="name" name="name" type="text" value="{{ old('name', $Info->name) }}">
                     <label for="name"></label>
                 </p>
                 <p>
-                    <input id="surname" type="text" value="{{ old('surname') ? old('surname') : $Info->surname }}">
+                    <input id="surname" name="surname" type="text" value="{{ old('surname', $Info->surname) }}">
                     <label for="surname"></label>
                 </p>
                 <p>
-                    <input id="username" type="text" value="{{ old('username') ? old('username') : $Info->username }}">
+                    <input id="username" name="username" type="text" value="{{ old('username', $Info->username) }}">
                     <label for="username"></label>
                 </p>
                 <p>
-                    <input id="password" type="password"
-                        value="{{ old('password') ? old('password') : $Info->password }}">
+                    <input id="password" type="password" name="password" value="{{ old('password', $Info->password) }}">
                     <label for="password"></label>
                 </p>
                 <p>
-                    <input id="birthdate" type="date"
-                        value="{{ old('birthdate') ? old('birthdate') : $Info->birthdate }}">
+                    <input id="birthdate" type="date" name="birthdate" value="{{ old('birthdate', $Info->birthdate) }}">
                     <label for="birthdate"></label>
                 </p>
                 <p>
-                    <input id="male" type="radio" value="MALE" name="sex-en" {{ $Info->sex == 'MALE' ? 'checked' : '' }}>
+                    <input id="male" type="radio" value="MALE" name="sex" {{ $Info->sex == 'MALE' ? 'checked' : '' }}>
                     <label for="male">muž</label>
-                    <input id="female" type="radio" value="FEMALE" name="sex-en"
+                    <input id="female" type="radio" value="FEMALE" name="sex"
                         {{ $Info->sex == 'FEMALE' ? 'checked' : '' }}>
                     <label for="female">žena</label>
                 </p>
@@ -93,11 +92,12 @@
             </div>
             <div class="item-25 input" id="contact-enabled">
                 <p>
-                    <input id="email" type="text" value="{{ old('email') ? old('email') : $Info->email }}">
+                    <input id="email" type="mail" name="email" value="{{ old('email', $Info->email) }}">
                     <label for="email"></label>
                 </p>
                 <p>
-                    <input id="phone" type="text" value="{{ old('phone') ? old('phone') : $Info->phone }}">
+                    <input id="phone" type="tel" name="phone" placeholder="0901 234 567" pattern="[0-9]{4} [0-9]{3} [0-9]{3}"
+                        value="{{ old('phone', $Info->phone) }}">
                     <label for="phone"></label>
                 </p>
             </div>
@@ -121,23 +121,23 @@
             </div>
             <div class="item-25 input" id="address-enabled">
                 <p>
-                    <input id="street" type="text" value="{{ old('street') ? old('street') : $Info->street }}">
+                    <input id="street" type="text" name="street" placeholder="Národná 1" value="{{ old('street', $Info->street) }}">
                     <label for="street"></label>
                 </p>
                 <p>
-                    <input id="city" type="text" value="{{ old('city') ? old('city') : $Info->city }}">
+                    <input id="city" type="text" name="city" placeholder="Bratislava" value="{{ old('city', $Info->city) }}">
                     <label for="city"></label>
                 </p>
                 <p>
-                    <input id="county" type="text" value="{{ old('county') ? old('county') : $Info->county }}">
+                    <input id="county" type="text" name="county" placeholder="Bratislavský" value="{{ old('county', $Info->county) }}">
                     <label for="county"></label>
                 </p>
                 <p>
-                    <input id="psc" type="text" value="{{ old('psc') ? old('psc') : $Info->psc }}">
+                    <input id="psc" type="text" name="psc" placeholder="01001" value="{{ old('psc', $Info->psc) }}">
                     <label for="psc"></label>
                 </p>
                 <p>
-                    <input id="state" type="text" value="{{ old('state') ? old('state') : $Info->state }}">
+                    <input id="state" type="text" name="state" placeholder="Slovensko" value="{{ old('state', $Info->state) }}">
                     <label for="state"></label>
                 </p>
             </div>
@@ -150,5 +150,4 @@
             </div>
         </div>
     </form>
-    {{-- <script src="{{ URL::asset('js/account.js') }}"></script> --}}
 @endsection

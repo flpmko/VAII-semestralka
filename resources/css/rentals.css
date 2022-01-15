@@ -1,5 +1,5 @@
 .rent-card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     width: 100%;
     height: 25%;
@@ -15,4 +15,68 @@
     object-position: top;
     margin-left: auto;
     border-radius: 5px;
+}
+.btn-returned {
+    width: 210px;
+    height: 56px;
+    display: flex;
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+    cursor: not-allowed;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        0deg,
+        rgb(63, 63, 63) 0%,
+        rgb(139, 139, 139) 100%
+    );
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s;
+}
+.btn-returned:hover {
+    box-shadow: 0 0 10px 4px rgba(143, 142, 142, 0.5);
+}
+.btn-rentals {
+    width: 130px;
+    height: 56px;
+    display: flex;
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        0deg,
+        rgba(229, 74, 5, 1) 0%,
+        rgba(255, 165, 0, 1) 100%
+    );
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s;
+}
+.btn-rentals a {
+    color: white;
+    text-decoration: none;
+}
+.btn-rentals:hover {
+    box-shadow: 0 0 10px 4px rgba(202, 93, 3, 0.5);
+    width: 200px;
+}
+.right-bot {
+    margin-bottom: auto;
+    margin-left: auto;
+}
+.item-middle {
+    margin-left: auto;
+    margin-right: auto;
+}
+.item-middle img {
+    scale: 0.5;
+    min-height: 60vh;
+}
+.rental-name {
+    font-size: xx-large;
 }

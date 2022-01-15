@@ -3,14 +3,14 @@
     <div class="search-bar">
         <button type="button" class="btn-items"><a href="item-new">PRIDAŤ</a></button>
         <button type="button" class="btn-items">POŽIČAŤ</button>
-        <input type="search" class="search-bar-input" placeholder="vyhľadaj položku">
-        <img src="../imgs/icons/search.png" alt="search icon" class="search-bar-icon">
+        <input id="search-bar" type="search" class="search-bar-input" onkeyup="searchItems()" placeholder="vyhľadaj položku">
+        {{-- <img src="../imgs/icons/search.png" alt="search icon" class="search-bar-icon"> --}}
     </div>
     <div style="overflow-x: auto; min-height: 80vh;">
-        <table>
+        <table id="items-table">
             <thead>
                 <th></th>
-                <th>č.</th>
+                {{-- <th>č.</th> --}}
                 <th>Položka</th>
                 <th>ks</th>
                 <th>qty</th>
@@ -24,13 +24,13 @@
                 @foreach ($list as $item)
                     <tr>
                         <td><a id="delete-icon">
-                            <button class="items-dummy-button" onclick="confirmAction('vymazať', '{{$item->name}}', '{{ $item->id }}')">
+                            <button class="items-dummy-button" onclick="confirmAction('delete', '{{$item->name}}', '{{ $item->id }}')">
                                 <img src="../imgs/icons/remove.png" alt="remove" class="table-icon">
                             </button>
                             </a><a href="item-edit/{{ $item->id }}">
                                 <img src="../imgs/icons/pencil.png" alt="pencil" class="table-icon">
                             </a></td>
-                        <td>{{ $item->id }}</td>
+                        {{-- <td>{{ $item->id }}</td> --}}
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->quantity }}</td>
                         <td><label><input type="number" class="small" value="0" min="0"
@@ -39,7 +39,7 @@
                         <td>{{ $item->type }}</td>
                         <td>{{ $item->inputs }}</td>
                         <td>{{ $item->outputs }}</td>
-                        <td>{{ $item->docs }}</td>
+                        <td><img src="{{asset("storage/".$item->docs)}}" alt="-"></td>
                     </tr>
                 @endforeach
             </tbody>

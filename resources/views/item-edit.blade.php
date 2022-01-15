@@ -139,7 +139,7 @@
                 <div class="file-group">
                     <div class="form-item">
                         <input id="image" type="file" class="form-control" name="image"
-                            value="{{ old('image') ? old('image') : $Info->image }}">
+                            value="{{ old('image') ? old('image') : asset("storage/".$Info->image)}}">
                         <span style="color: red">@error('image'){{ $message }} @enderror</span>
                     </div>
                     <div class="form-item">

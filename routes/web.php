@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RentalsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +17,14 @@ use App\Http\Controllers\UserController;
 */
 
 Route::view('/', 'home')->name('home-page');
-Route::view('/rentals','rentals')->name('rentals-page');
 Route::view('/sets','sets')->name('sets-page');
 
 Route::view('/account','account')->name('account-page');
 Route::get('account-edit/{id}', [UserController::class, 'edit']);
 Route::post('account-update', [UserController::class, 'update'])->name('account-update');
+
+Route::get('rentals', [RentalsController::class, 'rentals'])->name('rentals-page');
+Route::post('rental-return/{id}', [RentalsController::class, 'setReturnDate'])->name('rentals-return');
 
 Route::view('/item-new','item-new')->name('new-item-page');
 Route::get('items', [ItemController::class, 'items'])->name('items-page');

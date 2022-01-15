@@ -24,12 +24,3 @@ function setClassByValue(elementId, buttonId) {
         button.setAttribute("class", "hidden form-icon");
     }
 }
-
-window.confirmAction = function (action, itemName, itemId) {
-    if (confirm("Naoazaj chcete " + action + " " + itemName + "?")) {
-        window.location.href = 'delete/' + itemId;
-        window.addEventListener('load', function () {
-            alert(itemName + " bol úspešne vymazaný!");
-          })
-    }
-}

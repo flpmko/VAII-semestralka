@@ -2159,6 +2159,8 @@ __webpack_require__(/*! ./navbar */ "./resources/js/navbar.js");
 
 __webpack_require__(/*! ./new-item */ "./resources/js/new-item.js");
 
+__webpack_require__(/*! ./items */ "./resources/js/items.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -2202,6 +2204,64 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/items.js":
+/*!*******************************!*\
+  !*** ./resources/js/items.js ***!
+  \*******************************/
+/***/ (() => {
+
+window.searchItems = function () {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("search-bar");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("items-table");
+  tr = table.getElementsByTagName("tr"); // Loop through all table rows, and hide those who don't match the search query
+
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+};
+
+window.confirmAction = function (action, itemName, itemId) {
+  switch (action) {
+    case "delete":
+      if (confirm("Naoazaj chcete vymazať " + itemName + "?")) {
+        window.location.href = "delete/" + itemId;
+        window.addEventListener("load", function () {
+          alert(itemName + " bol úspešne vymazaný!");
+        });
+      }
+
+      break;
+
+    case "return":
+      if (confirm("Naoazaj chcete vrátiť pôžičku " + itemName + "?")) {
+        window.location.href = "rental-return/" + itemId;
+        window.addEventListener("load", function () {
+          alert("Pôžička " + itemName + " bola úspešne vrátená!");
+        });
+      }
+
+      break;
+
+    default:
+      break;
+  }
+};
 
 /***/ }),
 
@@ -2259,15 +2319,6 @@ function setClassByValue(elementId, buttonId) {
     button.setAttribute("class", "hidden form-icon");
   }
 }
-
-window.confirmAction = function (action, itemName, itemId) {
-  if (confirm("Naoazaj chcete " + action + " " + itemName + "?")) {
-    window.location.href = 'delete/' + itemId;
-    window.addEventListener('load', function () {
-      alert(itemName + " bol úspešne vymazaný!");
-    });
-  }
-};
 
 /***/ }),
 
