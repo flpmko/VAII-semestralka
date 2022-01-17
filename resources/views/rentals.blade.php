@@ -25,7 +25,7 @@
                         <div class="item-25">
                             <form action="{{ route('rentals-return', $rental->id) }}" method="POST"
                                 enctype="multipart/form-data"
-                                onsubmit="return confirm('Naoazaj chcete vrátiť pôžičku ' + $rental->event_name + '?');">
+                                onsubmit="return confirm('Naoazaj chcete vrátiť pôžičku?');">
                                 @csrf
                                 <br>
                                 <button type="submit" class="btn-rentals">VRÁTIŤ</button>
