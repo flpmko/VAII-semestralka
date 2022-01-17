@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RentalsController;
 
@@ -23,14 +24,18 @@ Route::view('/account','account')->name('account-page');
 Route::get('account-edit/{id}', [UserController::class, 'edit']);
 Route::post('account-update', [UserController::class, 'update'])->name('account-update');
 
-Route::get('rentals', [RentalsController::class, 'rentals'])->name('rentals-page');
-Route::post('rental-return/{id}', [RentalsController::class, 'setReturnDate'])->name('rentals-return');
+Route::get('rentals', [RentalsController::class, 'index'])->name('rentals-page');
+Route::post('rental-return/{id}', [RentalsController::class, 'returnRental'])->name('rentals-return');
+Route::get('rental-new', [RentalsController::class, 'create'])->name('new-rental-page');
+Route::post('rental-add', [RentalsController::class, 'store'])->name('rental-add');
 
-Route::view('/item-new','item-new')->name('new-item-page');
-Route::get('items', [ItemController::class, 'items'])->name('items-page');
-Route::post('item-add', [ItemController::class, 'add']);
-Route::get('item-edit/{id}', [ItemController::class, 'edit']);
-Route::post('item-update', [ItemController::class, 'update'])->name('item-update');
-Route::get('item-delete/{id}', [ItemController::class, 'delete']);
+Route::get('items', [ItemsController::class, 'index'])->name('items-page');
+Route::get('item-new', [ItemsController::class, 'create'])->name('new-item-page');
+Route::post('item-add', [ItemsController::class, 'store']);
+Route::get('item-edit/{id}', [ItemsController::class, 'edit']);
+Route::post('item-update/{id}', [ItemsController::class, 'update'])->name('item-update');
+Route::get('item-delete/{id}', [ItemsController::class, 'destroy']);
+
+// Route::resource('/items', ItemsController::class)->name(ItemsController::index(), 'items-page');
 
 require __DIR__.'/auth.php';

@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <form action="add" method="POST" enctype=multipart/form-data>
+        <form action="item-add" method="POST" enctype=multipart/form-data>
             @csrf
             <div class="form-group">
                 <a href="/items"><img src="../imgs/icons/back.png" alt="back" class="edit-page-back"></a>

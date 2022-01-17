@@ -16,26 +16,26 @@
             </div>
         @endif
 
-        <form action="{{ route('item-update') }}" method="POST" enctype=multipart/form-data>
+        <form action="{{ route('item-update', $item->id) }}" method="POST" enctype=multipart/form-data>
             @csrf
             <div class="form-group">
                 <a href="/items"><img src="../imgs/icons/back.png" alt="back" class="edit-page-back"></a>
                 <h3>Upravte ľubovolné vlastnosti</h3>
             </div>
             <hr>
-            <input type="hidden" name="cid" value="{{ $Info->id }}">
+            <input type="hidden" name="cid" value="{{ $item->id }}">
             <div class="form-group">
                 <div class="form-item">
                     <label for="name">Názov</label>
                     <input id="name" type="text" class="form-control" name="name" placeholder="názov zariadenia"
-                        value="{{ old('name') ? old('name') : $Info->name }}">
+                        value="{{ old('name') ? old('name') : $item->name }}">
                     <span style="color: red">@error('name'){{ $message }} @enderror</span>
                 </div>
 
                 <div class="form-item">
                     <label for="quantity">Počet</label>
                     <input id="quantity" type="number" class="form-control" name="quantity" min="1"
-                        value="{{ old('quantity') ? old('quantity') : $Info->quantity }}">
+                        value="{{ old('quantity') ? old('quantity') : $item->quantity }}">
                     <span style="color: red">@error('quantity'){{ $message }} @enderror</span>
                 </div>
             </div>
@@ -43,14 +43,14 @@
             <div class="form-item">
                 <label for="category">Určenie</label>
                 <select name="category" id="category">
-                    @foreach (['audio', 'video', 'svetlá', 'iné'] as $item)
-                        <option value="{{ $item }}" @if ($item == old('category'))
+                    @foreach (['audio', 'video', 'svetlá', 'iné'] as $category)
+                        <option value="{{ $category }}" @if ($category == old('category'))
                             selected
                     @endif
-                    @if ($item == $Info->category)
+                    @if ($category == $item->category)
                         selected
                     @endif
-                    >{{ $item }}</option>
+                    >{{ $category }}</option>
                     @endforeach
                 </select>
                 <span style="color: red">@error('category'){{ $message }} @enderror</span>
@@ -63,7 +63,7 @@
                             <option value="{{ $audioItem }}" @if ($audioItem == old('type'))
                                 selected
                         @endif
-                        @if ($audioItem == $Info->type)
+                        @if ($audioItem == $item->type)
                             selected
                         @endif
                         >{{ $audioItem }}</option>
@@ -73,7 +73,7 @@
                             <option value="{{ $videoItem }}" @if ($videoItem == old('type'))
                                 selected
                         @endif
-                        @if ($videoItem == $Info->type)
+                        @if ($videoItem == $item->type)
                             selected
                         @endif
                         >{{ $videoItem }}</option>
@@ -83,7 +83,7 @@
                             <option value="{{ $lightItem }}" @if ($lightItem == old('type'))
                                 selected
                         @endif
-                        @if ($lightItem == $Info->type)
+                        @if ($lightItem == $item->type)
                             selected
                         @endif
                         >{{ $lightItem }}</option>
@@ -93,7 +93,7 @@
                             <option value="{{ $otherItem }}" @if ($otherItem == old('type'))
                                 selected
                         @endif
-                        @if ($otherItem == $Info->type)
+                        @if ($otherItem == $item->type)
                             selected
                         @endif
                         >{{ $otherItem }}</option>
@@ -106,13 +106,13 @@
                 <div class="form-item">
                     <label for="inputs">Inputy</label>
                     <input id="inputs" type="text" class="form-control" name="inputs" placeholder="..."
-                        value="{{ old('inputs') ? old('inputs') : $Info->inputs }}">
+                        value="{{ old('inputs') ? old('inputs') : $item->inputs }}">
                     <span style="color: red">@error('inputs'){{ $message }} @enderror</span>
                 </div>
                 <div class="form-item">
                     <label for="outputs">Outputy</label>
                     <input id="outputs" type="text" class="form-control" name="outputs" placeholder="..."
-                        value="{{ old('outputs') ? old('outputs') : $Info->outputs }}">
+                        value="{{ old('outputs') ? old('outputs') : $item->outputs }}">
                     <span style="color: red">@error('outputs'){{ $message }} @enderror</span>
                 </div>
             </div>
@@ -123,13 +123,13 @@
                 <div class="file-group">
                     <div class="form-item">
                         <input id="docs" type="file" class="form-control" name="docs"
-                            value="{{ old('docs') ? old('docs') : $Info->docs }}"><span
+                            value="{{ old('docs') ? old('docs') : $item->docs }}"><span
                             style="color: red">@error('docs'){{ $message }} @enderror</span>
                     </div>
                     <div class="form-item">
                         <button id="docs-button" type="button" onclick="clearInputFile('docs')"><img
                                 src="../imgs/icons/remove.png" alt="remove"
-                                class="{{ $Info->docs ? 'form-icon hidden' : 'form-icon' }}"></button>
+                                class="{{ $item->docs ? 'form-icon hidden' : 'form-icon' }}"></button>
                     </div>
                 </div>
             </div>
@@ -139,7 +139,7 @@
                 <div class="file-group">
                     <div class="form-item">
                         <input id="image" type="file" class="form-control" name="image"
-                            value="{{ old('image') ? old('image') : asset("storage/".$Info->image)}}">
+                            value="{{ old('image') ? old('image') : asset("storage/".$item->image)}}">
                         <span style="color: red">@error('image'){{ $message }} @enderror</span>
                     </div>
                     <div class="form-item">

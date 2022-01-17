@@ -1,27 +1,34 @@
 @extends("layouts.master")
 @section('obsah')
-    @if (sizeof($list) != 0)
-        @foreach ($list as $item)
+    @if (sizeof($rentals) != 0)
+        @foreach ($rentals as $rental)
             <div class="rent-card container-account">
                 <div class="item-25">
                     <div class="container-card rental-name">
-                        <h4><b>{{ $item->event_name }}</b></h4>
+                        <h4><b>{{ $rental->event_name }}</b></h4>
                     </div>
                 </div>
                 <div class="item-50">
-                    <p><b>Dátum zapožičania: </b>{{ $item->date_of_rent }}</p>
+                    <p><b>Dátum zapožičania: </b>{{ $rental->date_of_rent }}</p>
                     <p><b>Zapožičané veci: </b></p>
+                    <p>
+                        @foreach ($rental->items as $item)
+                            {{ $item->name }} ({{ $item->pivot->quantity }}),
+                        @endforeach
+                    </p>
                 </div>
-                @if ($item->date_of_return == null)
+                @if ($rental->date_of_return == null)
                     <div class="item-25">
-                        {{-- <form action="{{ route('rentals-return', $item->id) }}" method="POST" enctype="multipart/form-data"> --}}
-                            {{-- @csrf --}}
-                            <button type="button" class="btn-rentals" onclick="confirmAction('return', '{{$item->event_name}}', '{{ $item->id }}')">VRÁTIŤ</button>
-                        {{-- </form> --}}
+                        <form action="{{ route('rentals-return', $rental->id) }}" method="POST"
+                            enctype="multipart/form-data"
+                            onsubmit="return confirm('Naoazaj chcete vrátiť pôžičku ' + $rental->event_name + '?');">
+                            @csrf
+                            <button type="submit" class="btn-rentals">VRÁTIŤ</button>
+                        </form>
                     </div>
                 @else
                     <div class="item-25">
-                        <p><b>Dátum vrátenia: </b>{{ $item->date_of_return }}</p>
+                        <p><b>Dátum vrátenia: </b>{{ $rental->date_of_return }}</p>
                         <button type="button" class="btn-returned">VRÁTENÉ</button>
                     </div>
                 @endif

@@ -2,7 +2,7 @@
 @section('obsah')
     <div class="search-bar">
         <button type="button" class="btn-items"><a href="item-new">PRIDAŤ</a></button>
-        <button type="button" class="btn-items">POŽIČAŤ</button>
+        <button type="button" class="btn-items"><a href="rental-new">POŽIČAŤ</a></button>
         <input id="search-bar" type="search" class="search-bar-input" onkeyup="searchItems()" placeholder="vyhľadaj položku">
         {{-- <img src="../imgs/icons/search.png" alt="search icon" class="search-bar-icon"> --}}
     </div>
@@ -10,10 +10,8 @@
         <table id="items-table">
             <thead>
                 <th></th>
-                {{-- <th>č.</th> --}}
                 <th>Položka</th>
                 <th>ks</th>
-                <th>qty</th>
                 <th>Určenie</th>
                 <th>Typ</th>
                 <th>Inputy</th>
@@ -21,7 +19,7 @@
                 <th>Dokumenty</th>
             </thead>
             <tbody>
-                @foreach ($list as $item)
+                @foreach ($items as $item)
                     <tr>
                         <td><a id="delete-icon">
                             <button class="items-dummy-button" onclick="confirmAction('delete', '{{$item->name}}', '{{ $item->id }}')">
@@ -30,11 +28,8 @@
                             </a><a href="item-edit/{{ $item->id }}">
                                 <img src="../imgs/icons/pencil.png" alt="pencil" class="table-icon">
                             </a></td>
-                        {{-- <td>{{ $item->id }}</td> --}}
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->quantity }}</td>
-                        <td><label><input type="number" class="small" value="0" min="0"
-                                    max="{{ $item->quantity }}"></label></td>
                         <td>{{ $item->category }}</td>
                         <td>{{ $item->type }}</td>
                         <td>{{ $item->inputs }}</td>
