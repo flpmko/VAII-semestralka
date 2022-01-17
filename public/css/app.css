@@ -1,6 +1,9 @@
 body {
     font-family: Archivo, sans-serif;
-    margin: -8px;
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-bottom: -8px;
+    margin-right: 0px;
 }
 
 .centered-text {
@@ -26,7 +29,7 @@ body {
     color: white;
     text-align: center;
     padding: 5px;
-    width: 100%;
+    width: auto;
     /* position: fixed; */
     bottom: 0;
 }
@@ -37,7 +40,7 @@ body {
     position: relative;
     text-align: center;
     color: white;
-    z-index: -1;
+    /* z-index: -1; */
 }
 .container-heading {
     padding-left: 25px;
@@ -66,6 +69,7 @@ body {
     -o-object-fit: cover;
        object-fit: cover;
     filter: brightness(50%);
+    z-index: -1;
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -97,6 +101,33 @@ body {
 .carrousel {
     display: flex;
     padding: 5px;
+}
+.btn-home {
+    width: 200px;
+    height: 56px;
+    display: flex;
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        0deg,
+        rgba(229, 74, 5, 1) 0%,
+        rgba(255, 165, 0, 1) 100%
+    );
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s;
+}
+.btn-home a {
+    color: white;
+    text-decoration: none;
+}
+.btn-home:hover {
+    box-shadow: 0 0 10px 4px rgba(202, 93, 3, 0.5);
+    width: 300px;
 }
 th {
     border-bottom: 1px solid #4b4b4b;
@@ -328,7 +359,7 @@ td:nth-child(1) {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 0;
+    z-index: 5;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -456,7 +487,7 @@ td:nth-child(1) {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 0;
+    z-index: 5;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -922,4 +953,46 @@ span.password {
     border: none;
     background: none;
 }
+.box-sized {
+    box-sizing: border-box;
+}
+.image {
+    width: 300px;
+    height: 300px;
+}
+
+.container {
+    padding: 64px;
+}
+
+/* Clear floats */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* 2/3 column */
+.column-66 {
+    float: left;
+    width: 66.66666%;
+    padding: 20px;
+}
+
+/* 1/3 column */
+.column-33 {
+    float: left;
+    width: 33.33333%;
+    padding: 20px;
+}
+
+/* Add responsiveness - make the columns appear on top of each other instead of next to each other on small screens */
+@media screen and (max-width: 1000px) {
+    .column-66,
+    .column-33 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 

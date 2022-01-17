@@ -3,12 +3,14 @@
         <img src="../imgs/ez-logo.svg" class="logo-image" alt="logo">
         DOMOV
     </a>
-    <a href="{{ route('items-page') }}" class="{{ Request::routeIs('items-page') ? 'active' : '' }}">INVENTÁR</a>
-    <a href="{{ route('rentals-page') }}" class="{{ Request::routeIs('rentals-page') ? 'active' : '' }}">PÔŽIČKY</a>
-    <a href="{{ route('sets-page') }}" class="{{ Request::routeIs('sets-page') ? 'active' : '' }}">SETY</a>
+    <a href="{{ Auth::user() ? route('items-page') : route('login') }}"
+        class="{{ Request::routeIs('items-page') ? 'active' : '' }}">INVENTÁR</a>
+    <a href="{{ Auth::user() ? route('rentals-page') : route('login') }}"
+        class="{{ Request::routeIs('rentals-page') ? 'active' : '' }}">PÔŽIČKY</a>
+    <a href="{{ route('help-page') }}" class="{{ Request::routeIs('help-page') ? 'active' : '' }}">POMOC</a>
 
     <div id="slide">
-        <a id="toggle" href="{{ route('account-page') }}"
+        <a id="toggle" href="{{ Auth::user() ? route('account-page') : route('login') }}"
             class="{{ Request::routeIs('account-page') ? 'active right account-section' : 'right account-section' }}">
             <img id="account-icon" class="logo-image" alt="account icon" src="../imgs/icons/user-off.png" />
             ÚČET
@@ -18,10 +20,10 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 @auth
-                        <button id="logOutButton" type="submit" class="log-out-button">
-                            <img src="../imgs/icons/log-out.png" alt="log-out" class="logo-image-small">
-                            Odhlásiť
-                        </button>
+                    <button id="logOutButton" type="submit" class="log-out-button">
+                        <img src="../imgs/icons/log-out.png" alt="log-out" class="logo-image-small">
+                        Odhlásiť
+                    </button>
                 @endauth
 
             </form>

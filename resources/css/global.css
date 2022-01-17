@@ -1,6 +1,9 @@
 body {
     font-family: Archivo, sans-serif;
-    margin: -8px;
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-bottom: -8px;
+    margin-right: 0px;
 }
 
 .centered-text {
@@ -26,7 +29,7 @@ body {
     color: white;
     text-align: center;
     padding: 5px;
-    width: 100%;
+    width: auto;
     /* position: fixed; */
     bottom: 0;
 }

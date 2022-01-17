@@ -17,8 +17,8 @@ use App\Http\Controllers\RentalsController;
 |
 */
 
-Route::view('/', 'home')->name('home-page');
-Route::view('/sets','sets')->name('sets-page');
+Route::get('/', [RentalsController::class, 'getRentalsForHome'])->name('home-page');
+Route::view('/help','help')->name('help-page');
 
 Route::view('/account','account')->name('account-page');
 Route::get('account-edit/{id}', [UserController::class, 'edit']);
