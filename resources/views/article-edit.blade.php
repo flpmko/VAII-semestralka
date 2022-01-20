@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <form action="article-add" method="POST" enctype=multipart/form-data>
+        <form action="{{ route('article-update', $article->id) }}" method="POST" enctype=multipart/form-data>
             @csrf
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
             <div class="form-group">
@@ -27,7 +27,7 @@
                 <div class="form-item">
                     <label for="heading">*Názov článku</label>
                     <input id="heading" type="text" class="form-control" name="heading" placeholder="názov článku"
-                        value="{{ old('heading') ? old('heading') : $article->heading }}">
+                        value="{{ old('heading') ? old('heading') : $article->heading }}" required>
                     <span style="color: red">@error('heading'){{ $message }} @enderror</span>
                 </div>
             </div>
@@ -35,15 +35,15 @@
             <div class="form-group">
                 <div class="form-item">
                     <label for="article">*Článok</label>
-                    <input id="article" type="text" class="form-control" name="article" placeholder="article"
-                        value="{{ old('article') ? old('article') : $article->text }}">
+                    <textarea name="article" id="article" cols="50" rows="7" placeholder="text článku"
+                        required>{{ old('article') ? old('article') : $article->text }}</textarea>
                     <span style="color: red">@error('article'){{ $message }} @enderror</span>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="form-item">
-                    <label for="image">*Obrázok</label>
+                    <label for="image">Obrázok</label>
                     <div class="file-group">
                         <div class="form-item">
                             <input id="image" type="file" class="form-control" name="image" accept="image/*">

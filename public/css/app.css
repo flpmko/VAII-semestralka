@@ -835,6 +835,7 @@ span.password {
 }
 
 .new-item select,
+.new-item textarea,
 .new-item input[type="text"],
 .new-item input[type="number"],
 .new-item input[type="file"],
@@ -863,6 +864,7 @@ span.password {
 }
 
 .new-item select:hover,
+.new-item textarea:hover,
 .new-item input[type="text"]:hover,
 .new-item input[type="number"]:hover,
 .new-item input[type="password"]:hover,

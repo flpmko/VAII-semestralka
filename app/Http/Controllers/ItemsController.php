@@ -54,7 +54,8 @@ class ItemsController extends Controller
         ]);
 
         $pathImage = $request->file('image')->store(
-            'item-images', ["disk"=>"public"]
+            'item-images',
+            ["disk" => "public"]
         );
 
         $item = Item::create([
@@ -110,24 +111,32 @@ class ItemsController extends Controller
             'name' => ['required', 'string', 'max:60'],
             'quantity' => ['required', 'int'],
             'category' => ['required', 'string', 'max:10'],
-            'type' => ['required', 'string', 'max:20'],
-            'image' => ['required', 'mimes:jpeg,bmp,png']
+            'type' => ['required', 'string', 'max:20']
         ]);
-
-        $pathImage = $request->file('image')->store(
-            'item-images', ["disk"=>"public"]
-        );
 
         $item = Item::where('id', $id)
-        ->update([
-            'name' => $request->input('name'),
-            'quantity' => $request->input('quantity'),
-            'category' => $request->input('category'),
-            'type' => $request->input('type'),
-            'inputs' => $request->input('inputs'),
-            'outputs' => $request->input('outputs'),
-            'image' => $pathImage
-        ]);
+            ->update([
+                'name' => $request->input('name'),
+                'quantity' => $request->input('quantity'),
+                'category' => $request->input('category'),
+                'type' => $request->input('type'),
+                'inputs' => $request->input('inputs'),
+                'outputs' => $request->input('outputs')
+            ]);
+
+        if ($request->input('image') != NULL) {
+            $request->validate([
+                'image' => ['mimes:jpeg,bmp,png']
+            ]);
+            $pathImage = $request->file('image')->store(
+                'item-images',
+                ["disk" => "public"]
+            );
+            $item = Item::where('id', $id)
+                ->update([
+                    'image' => $pathImage
+                ]);
+        }
 
         $userId = Auth::user()->id;
         app('App\Http\Controllers\LogsController')->store($userId, 'EDITED_ITEM_#_' . $id);

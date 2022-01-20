@@ -27,7 +27,7 @@
                 <div class="form-item">
                     <label for="heading">*Názov článku</label>
                     <input id="heading" type="text" class="form-control" name="heading" placeholder="názov článku"
-                        value="{{ old('heading') }}">
+                        value="{{ old('heading') }}" required>
                     <span style="color: red">@error('heading'){{ $message }} @enderror</span>
                 </div>
             </div>
@@ -35,8 +35,7 @@
             <div class="form-group">
                 <div class="form-item">
                     <label for="article">*Článok</label>
-                    <input id="article" type="text" class="form-control" name="article" placeholder="article"
-                        value="{{ old('article') }}">
+                    <textarea name="article" id="article" cols="50" rows="7" placeholder="text článku" required></textarea>
                     <span style="color: red">@error('article'){{ $message }} @enderror</span>
                 </div>
             </div>
@@ -46,7 +45,7 @@
                     <label for="image">*Obrázok</label>
                     <div class="file-group">
                         <div class="form-item">
-                            <input id="image" type="file" class="form-control" name="image" accept="image/*">
+                            <input id="image" type="file" class="form-control" name="image" accept="image/*" required>
                         </div>
                         <div class="form-item">
                             <button id="image-button" type="button" onclick="clearInputFile('image')"><img

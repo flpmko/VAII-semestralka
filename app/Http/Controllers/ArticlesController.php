@@ -46,7 +46,8 @@ class ArticlesController extends Controller
 
 
         $pathImage = $request->file('image')->store(
-            'article-images', ["disk"=>"public"]
+            'article-images',
+            ["disk" => "public"]
         );
 
         $article = Article::create([
@@ -96,23 +97,31 @@ class ArticlesController extends Controller
     {
         $request->validate([
             'heading' => ['required', 'max: 100'],
-            'article' => ['required'],
-            'image' => ['required', 'mimes:jpeg,bmp,png']
+            'article' => ['required']
         ]);
-
-        $pathImage = $request->file('image')->store(
-            'article-images', ["disk"=>"public"]
-        );
 
         $article = Article::where('id', $id)
-        ->update([
-            'heading' => $request->input('heading'),
-            'article' => $request->input('article'),
-            'image' => $pathImage
-        ]);
+            ->update([
+                'heading' => $request->input('heading'),
+                'text' => $request->input('article')
+            ]);
+
+        if ($request->input('image') != NULL) {
+            $request->validate([
+                'image' => ['mimes:jpeg,bmp,png']
+            ]);
+            $pathImage = $request->file('image')->store(
+                'article-images',
+                ["disk" => "public"]
+            );
+            $article = Article::where('id', $id)
+                ->update([
+                    'image' => $pathImage
+                ]);
+        }
 
         $userId = Auth::user()->id;
-        app('App\Http\Controllers\LogsController')->store($userId, 'EDITED_ARTICLE_#_' . $article->id);
+        app('App\Http\Controllers\LogsController')->store($userId, 'EDITED_ARTICLE_#_' . $id);
 
         return redirect('help');
     }
