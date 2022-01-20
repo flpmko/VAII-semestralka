@@ -15,7 +15,6 @@ class LogsController extends Controller
     public function index()
     {
         $logs = Log::all();
-
         return view('logs', ['logs' => $logs]);
     }
 

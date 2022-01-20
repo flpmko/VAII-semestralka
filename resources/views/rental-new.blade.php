@@ -29,7 +29,7 @@
                     <label for="event_name">*Názov akcie</label>
                     <input id="event_name" type="text" class="form-control" name="event_name" placeholder="názov akcie"
                         value="{{ old('event_name') }}">
-                    <span style="color: red">@error('name'){{ $message }} @enderror</span>
+                    <span style="color: red">@error('event_name'){{ $message }} @enderror</span>
                 </div>
             </div>
 
@@ -37,18 +37,16 @@
 
                 <div class="form-group">
                     <div class="form-item item-25">
-                        <input data-id="{{ $item->id }}" type="checkbox"
-                            name="borrow[{{ $item->id }}]">
+                        <input data-id="{{ $item->id }}" type="checkbox" name="borrow[{{ $item->id }}]">
                     </div>
                     <div class="form-item item-50">
                         <span>{{ $item->name }}</span>
                     </div>
                     <div class="form-item item-25">
-                        <input type="number" class="form-control"
-                            name="items[{{ $item->id }}]" min="0"
-                            value="{{ old('number') ? old('number') : '0' }}" max="{{ $item->quantity }}"
-                            {{ $item->quantity > 0 ? null : 'disabled' }}>
-                        <span style="color: red">@error('quantity'){{ $message }} @enderror</span>
+                        <input type="number" class="form-control" name="items[{{ $item->id }}]" min="0"
+                            value="{{ old('items[' . $item->id . ']') ? old('items[' . $item->id . ']') : '0' }}"
+                            max="{{ $item->quantity }}" {{ $item->quantity > 0 ? null : 'disabled' }}>
+                        <span style="color: red">@error('items[{{ $item->id }}]'){{ $message }} @enderror</span>
                     </div>
                     <div class="form-item item-25">
                         <p>max. {{ $item->quantity }}</p>
@@ -62,7 +60,6 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block">VYTVORIŤ</button>
             </div>
-            {{-- <label><input type="number" class="small" value="0" min="0" max="{{ $item->quantity }}"></label> --}}
 
         </form>
     </div>

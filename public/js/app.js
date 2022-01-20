@@ -2214,12 +2214,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (() => {
 
 window.searchItems = function () {
-  // Declare variables
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("search-bar");
   filter = input.value.toUpperCase();
   table = document.getElementById("items-table");
-  tr = table.getElementsByTagName("tr"); // Loop through all table rows, and hide those who don't match the search query
+  tr = table.getElementsByTagName("tr");
 
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[1];
@@ -2236,14 +2235,25 @@ window.searchItems = function () {
   }
 };
 
-window.confirmAction = function (action, itemName, itemId) {
+window.confirmAction = function (action, itemType, itemName, itemId) {
   switch (action) {
     case "delete":
-      if (confirm("Naoazaj chcete vymazať " + itemName + "?")) {
-        window.location.href = "item-delete/" + itemId;
-        window.addEventListener("load", function () {
-          alert(itemName + " bol úspešne vymazaný!");
-        });
+      if (itemType == 'item') {
+        if (confirm("Naoazaj chcete vymazať zariadenie " + itemName + "?")) {
+          window.location.href = "item-delete/" + itemId;
+          window.addEventListener("load", function () {
+            alert("Zariadenie " + itemName + " bolo úspešne vymazané!");
+          });
+        }
+      }
+
+      if (itemType == 'article') {
+        if (confirm("Naoazaj chcete vymazať článok " + itemName + "?")) {
+          window.location.href = "article-delete/" + itemId;
+          window.addEventListener("load", function () {
+            alert("Článok " + itemName + " bol úspešne vymazaný!");
+          });
+        }
       }
 
       break;

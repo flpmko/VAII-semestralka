@@ -878,6 +878,8 @@ span.password {
     display: flex;
     gap: 50px;
     align-items: center;
+    width: auto;
+    padding-bottom: 10px;
 }
 
 .file-group{
@@ -888,6 +890,7 @@ span.password {
 
 .form-item {
     flex-grow: 1;
+    width: auto;
 }
 
 .new-item-form {
@@ -984,6 +987,14 @@ span.password {
     float: left;
     width: 33.33333%;
     padding: 20px;
+}
+
+.help-button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
 /* Add responsiveness - make the columns appear on top of each other instead of next to each other on small screens */

@@ -2,7 +2,9 @@
 @section('obsah')
     @auth
         <div class="search-bar">
-            <button type="button" class="btn-items" onclick="return location.href = 'item-new';">PRIDAŤ</button>
+            @if ($userInfo != null && $userInfo[0]->admin == 'Y')
+                <button type="button" class="btn-items" onclick="return location.href = 'item-new';">PRIDAŤ</button>
+            @endif
             <button type="button" class="btn-items" onclick="return location.href = 'rental-new';">POŽIČAŤ</button>
             <input id="search-bar" type="search" class="search-bar-input" onkeyup="searchItems()" placeholder="vyhľadaj položku">
             {{-- <img src="../imgs/icons/search.png" alt="search icon" class="search-bar-icon"> --}}
@@ -26,7 +28,7 @@
                             @if ($userInfo != null && $userInfo[0]->admin == 'Y')
                                 <td>
                                     <button class="items-dummy-button"
-                                        onclick="confirmAction('delete', '{{ $item->name }}', '{{ $item->id }}')">
+                                        onclick="confirmAction('delete', 'item', '{{ $item->name }}', '{{ $item->id }}')">
                                         <img src="../imgs/icons/remove.png" alt="remove" class="table-icon">
                                     </button>
                                     <a href="item-edit/{{ $item->id }}">

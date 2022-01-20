@@ -42,6 +42,8 @@
     display: flex;
     gap: 50px;
     align-items: center;
+    width: auto;
+    padding-bottom: 10px;
 }
 
 .file-group{
@@ -52,6 +54,7 @@
 
 .form-item {
     flex-grow: 1;
+    width: auto;
 }
 
 .new-item-form {
