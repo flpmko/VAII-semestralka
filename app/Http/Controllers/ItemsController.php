@@ -67,6 +67,9 @@ class ItemsController extends Controller
             'image' => $pathImage
         ]);
 
+        $userId = Auth::user()->id;
+        app('App\Http\Controllers\LogsController')->store($userId, 'ADDED_ITEM_#_' . $item->id);
+
         return redirect('items');
     }
 
@@ -126,6 +129,9 @@ class ItemsController extends Controller
             'image' => $pathImage
         ]);
 
+        $userId = Auth::user()->id;
+        app('App\Http\Controllers\LogsController')->store($userId, 'EDITED_ITEM_#_' . $id);
+
         return redirect('items');
     }
 
@@ -139,6 +145,10 @@ class ItemsController extends Controller
     {
         $item = Item::find($id);
         $item->delete();
+
+        $userId = Auth::user()->id;
+        app('App\Http\Controllers\LogsController')->store($userId, 'DELETED_ITEM_#_' . $id);
+
         return redirect('items');
     }
 }

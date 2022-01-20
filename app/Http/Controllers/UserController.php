@@ -7,14 +7,14 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    // function users()
-    // {
-    //     $data = array(
-    //         'list' => DB::table('users')->get()
-    //     );
+    function users()
+    {
+        $data = array(
+            'list' => DB::table('users')->get()
+        );
 
-    //     return view('account', $data);
-    // }
+        return view('account', $data);
+    }
 
     function edit($id)
     {
@@ -24,7 +24,7 @@ class UserController extends Controller
         $data = [
             'Info' => $row
         ];
-        
+
         return view('account-edit', $data);
     }
 
@@ -59,15 +59,18 @@ class UserController extends Controller
                 'password' => $request->input('password')
             ]);
 
+        $userId = $request->input('cid');
+        app('App\Http\Controllers\LogsController')->store($userId, 'UPDATED_PROFILE');
+
         return redirect('account');
     }
 
-    // function delete($id)
-    // {
-    //     $delete = DB::table('users')
-    //         ->where('id', $id)
-    //         ->delete();
+    function delete($id)
+    {
+        $delete = DB::table('users')
+            ->where('id', $id)
+            ->delete();
 
-    //     return redirect('/');
-    // }
+        return redirect('/');
+    }
 }

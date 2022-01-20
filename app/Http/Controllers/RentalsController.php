@@ -125,15 +125,17 @@ class RentalsController extends Controller
         ]);
 
         $id_to_qty = $this->mapItems($request);
+        $userId = $request->input('user_id');
 
         $rental = Rental::create([
-            'user_id' => $request->input('user_id'),
+            'user_id' => $userId,
             'date_of_rent' => $request->input('date_of_rent'),
             'event_name' => $request->input('event_name')
         ]);
 
-
         $rental->items()->sync($id_to_qty, false);
+
+        app('App\Http\Controllers\LogsController')->store($userId, 'CREATED_RENTAL_#_' . $rental->id);
 
         return redirect('rentals');
     }
@@ -262,6 +264,8 @@ class RentalsController extends Controller
                 'date_of_return' => date("Y-m-d")
             ]);
 
+        $userId = Auth::user()->id;
+        app('App\Http\Controllers\LogsController')->store($userId, 'RETURNED_RENTAL_#_' . $id);
 
         return redirect('rentals');
     }
