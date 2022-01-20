@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Item;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class ItemsController extends Controller
 {
@@ -15,8 +17,14 @@ class ItemsController extends Controller
     public function index()
     {
         $items = Item::all();
+        $userInfo = NULL;
+        if (Auth::user())
+            $userInfo = User::where('id', Auth::user()->id)->get();
 
-        return view('items', [ 'items' => $items ]);
+        return view('items', [
+            'items' => $items,
+            'userInfo' => $userInfo
+        ]);
     }
 
     /**
@@ -49,13 +57,6 @@ class ItemsController extends Controller
             'item-images', ["disk"=>"public"]
         );
 
-        $pathManual = NULL;
-        if ($request->input('docs') != NULL) {
-            $pathManual = $request->file('docs')->store(
-                'item-documents', ["disk"=>"public"]
-            );
-        }
-
         $item = Item::create([
             'name' => $request->input('name'),
             'quantity' => $request->input('quantity'),
@@ -63,7 +64,6 @@ class ItemsController extends Controller
             'type' => $request->input('type'),
             'inputs' => $request->input('inputs'),
             'outputs' => $request->input('outputs'),
-            'manual' => ($pathManual != NULL) ? $pathManual : NULL,
             'image' => $pathImage
         ]);
 
@@ -115,13 +115,6 @@ class ItemsController extends Controller
             'item-images', ["disk"=>"public"]
         );
 
-        $pathManual = NULL;
-        if ($request->input('docs') != NULL) {
-            $pathManual = $request->file('docs')->store(
-                'item-documents', ["disk"=>"public"]
-            );
-        }
-
         $item = Item::where('id', $id)
         ->update([
             'name' => $request->input('name'),
@@ -130,7 +123,6 @@ class ItemsController extends Controller
             'type' => $request->input('type'),
             'inputs' => $request->input('inputs'),
             'outputs' => $request->input('outputs'),
-            'manual' => ($pathManual != NULL) ? $pathManual : NULL,
             'image' => $pathImage
         ]);
 

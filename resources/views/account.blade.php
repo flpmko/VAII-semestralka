@@ -46,9 +46,9 @@
                     <label for="password"></label>
                 </p>
                 <p>
-                    <input id="birthdate" type="birthdate" value="{{ Auth::user() ? Auth::user()->birthdate : 'NA' }}"
+                    <input id="birthdate" type="date" value="{{ Auth::user() ? Auth::user()->birthdate : 'NA' }}"
                         disabled>
-                    <label for="date"></label>
+                    <label for="birthdate"></label>
                 </p>
                 <p>
                     <input id="male" type="radio" value="MALE" name="sex-dis"
@@ -73,7 +73,7 @@
 
             <div class="item-75" id="contact-disabled">
                 <p>
-                    <input id="email" type="mail" value="{{ Auth::user() ? Auth::user()->email : 'NA' }}" disabled>
+                    <input id="email" type="email" value="{{ Auth::user() ? Auth::user()->email : 'NA' }}" disabled>
                     <label for="email"></label>
                 </p>
                 <p>

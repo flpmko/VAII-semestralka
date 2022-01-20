@@ -1,5 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 @extends("layouts.master")
 @section('obsah')
     <div class="centered-content new-item">
@@ -117,29 +115,11 @@
                 </div>
             </div>
 
-
-            <div class="form-item">
-                <label for="docs">Manuál</label>
-                <div class="file-group">
-                    <div class="form-item">
-                        <input id="docs" type="file" class="form-control" name="docs"
-                            value="{{ old('docs') ? old('docs') : $item->docs }}"><span
-                            style="color: red">@error('docs'){{ $message }} @enderror</span>
-                    </div>
-                    <div class="form-item">
-                        <button id="docs-button" type="button" onclick="clearInputFile('docs')"><img
-                                src="../imgs/icons/remove.png" alt="remove"
-                                class="{{ $item->docs ? 'form-icon hidden' : 'form-icon' }}"></button>
-                    </div>
-                </div>
-            </div>
-
             <div class="form-item">
                 <label for="image">Obrázok</label>
                 <div class="file-group">
                     <div class="form-item">
-                        <input id="image" type="file" class="form-control" name="image"
-                            value="{{ old('image') ? old('image') : asset("storage/".$item->image)}}">
+                        <input id="image" type="file" class="form-control" name="image" accept="image/*">
                         <span style="color: red">@error('image'){{ $message }} @enderror</span>
                     </div>
                     <div class="form-item">

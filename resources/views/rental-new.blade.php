@@ -26,7 +26,7 @@
             <hr>
             <div class="form-group">
                 <div class="form-item">
-                    <label for="name">*Názov akcie</label>
+                    <label for="event_name">*Názov akcie</label>
                     <input id="event_name" type="text" class="form-control" name="event_name" placeholder="názov akcie"
                         value="{{ old('event_name') }}">
                     <span style="color: red">@error('name'){{ $message }} @enderror</span>
@@ -38,7 +38,7 @@
                 <div class="form-group">
                     <div class="form-item item-25">
                         <input data-id="{{ $item->id }}" type="checkbox"
-                            id="borrow" name="borrow[{{ $item->id }}]">
+                            name="borrow[{{ $item->id }}]">
                     </div>
                     <div class="form-item item-50">
                         <span>{{ $item->name }}</span>
@@ -51,7 +51,7 @@
                         <span style="color: red">@error('quantity'){{ $message }} @enderror</span>
                     </div>
                     <div class="form-item item-25">
-                        <p id="max_qty">max. {{ $item->quantity }}</p>
+                        <p>max. {{ $item->quantity }}</p>
                     </div>
                 </div>
 

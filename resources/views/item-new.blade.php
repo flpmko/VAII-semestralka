@@ -53,7 +53,7 @@
             </div>
             <div class="form-item">
                 <label for="type">*Typ</label>
-                <select name="type" id="type" value="{{ old('type') }}">
+                <select name="type" id="type">
                     <option value="" selected disabled hidden>vyberte typ</option>
                     <optgroup label="audio">
                         @foreach (['mic', 'PA', 'dibox', 'stagebox'] as $audioItem)
@@ -104,23 +104,10 @@
 
             <div class="form-group">
                 <div class="form-item">
-                    <label for="docs">Manuál</label>
-                    <div class="file-group">
-                        <div class="form-item">
-                            <input id="docs" type="file" class="form-control" name="docs">
-                        </div>
-                        <div class="form-item">
-                            <button id="docs-button" type="button" onclick="clearInputFile('docs')"><img
-                                    src="../imgs/icons/remove.png" alt="remove" class="form-icon"></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-item">
                     <label for="image">*Obrázok</label>
                     <div class="file-group">
                         <div class="form-item">
-                            <input id="image" type="file" class="form-control" name="image" accept=".jpg,.png,.jpeg,.bmp">
+                            <input id="image" type="file" class="form-control" name="image" accept="image/*">
                         </div>
                         <div class="form-item">
                             <button id="image-button" type="button" onclick="clearInputFile('image')"><img
@@ -129,8 +116,8 @@
                     </div>
                 </div>
             </div>
+
             <div class="form-group">
-                <span style="color: red">@error('docs'){{ $message }} @enderror</span>
                 <span style="color: red">@error('image'){{ $message }} @enderror</span>
             </div>
             <hr>

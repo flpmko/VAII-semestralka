@@ -2240,7 +2240,7 @@ window.confirmAction = function (action, itemName, itemId) {
   switch (action) {
     case "delete":
       if (confirm("Naoazaj chcete vymazať " + itemName + "?")) {
-        window.location.href = "delete/" + itemId;
+        window.location.href = "item-delete/" + itemId;
         window.addEventListener("load", function () {
           alert(itemName + " bol úspešne vymazaný!");
         });

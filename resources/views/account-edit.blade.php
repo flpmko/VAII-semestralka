@@ -92,7 +92,7 @@
             </div>
             <div class="item-25 input" id="contact-enabled">
                 <p>
-                    <input id="email" type="mail" name="email" value="{{ old('email', $Info->email) }}">
+                    <input id="email" type="email" name="email" value="{{ old('email', $Info->email) }}">
                     <label for="email"></label>
                 </p>
                 <p>

@@ -1,7 +1,7 @@
 @extends("layouts.master")
 @section('obsah')
     @auth
-        @if ($rentals != null)
+        @if (sizeof($rentals) != 0)
             @foreach ($rentals as $rental)
                 <div class="rent-card container-account">
                     <div class="item-25">
