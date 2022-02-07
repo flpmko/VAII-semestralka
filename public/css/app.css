@@ -81,7 +81,7 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 25%;
-    height: 25%;
+    height: 275px;
     padding: 10px;
     border-radius: 5px;
     margin: 10px;
@@ -90,7 +90,6 @@ body {
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
     width: 27%;
-    height: 27%;
 }
 .container-card {
     padding: 2px 16px;
@@ -557,6 +556,7 @@ td:nth-child(1) {
     .links a {
         text-align: center;
         width: 100%;
+        justify-content: center;
     }
     .links.active {
         display: flex;
@@ -569,6 +569,12 @@ td:nth-child(1) {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        width: 100%;
+        justify-content: center;
+    }
+    .log-out-button {
+        width: 100vw;
+        justify-content: center;
     }
     
 }
@@ -743,6 +749,7 @@ td:nth-child(1) {
     .links a {
         text-align: center;
         width: 100%;
+        justify-content: center;
     }
     .links.active {
         display: flex;
@@ -755,6 +762,12 @@ td:nth-child(1) {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        width: 100%;
+        justify-content: center;
+    }
+    .log-out-button {
+        width: 100vw;
+        justify-content: center;
     }
     
 }

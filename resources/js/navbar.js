@@ -8,9 +8,11 @@ function setSrcByClass(elementId, src) {
     }
 }
 
-const toggleButton = document.getElementsByClassName('hamburger')[0]
-const navbarLinks = document.getElementsByClassName('links')[0]
+const toggleButton = document.getElementsByClassName("hamburger")[0];
+const navbarLinks = document.getElementsByClassName("links")[0];
 
-toggleButton.addEventListener('click', () => {
-  navbarLinks.classList.toggle('active')
-})
+toggleButton.addEventListener("click", (e) => {
+    e.stopImmediatePropagation();
+    navbarLinks.classList.toggle("active");
+    console.log("burgir");
+});

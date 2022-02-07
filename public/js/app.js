@@ -2292,10 +2292,12 @@ function setSrcByClass(elementId, src) {
   }
 }
 
-var toggleButton = document.getElementsByClassName('hamburger')[0];
-var navbarLinks = document.getElementsByClassName('links')[0];
-toggleButton.addEventListener('click', function () {
-  navbarLinks.classList.toggle('active');
+var toggleButton = document.getElementsByClassName("hamburger")[0];
+var navbarLinks = document.getElementsByClassName("links")[0];
+toggleButton.addEventListener("click", function (e) {
+  e.stopImmediatePropagation();
+  navbarLinks.classList.toggle("active");
+  console.log("burgir");
 });
 
 /***/ }),
