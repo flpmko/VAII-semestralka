@@ -2,7 +2,7 @@
 @section('obsah')
     <div class="container-home">
         <div style="z-index: -1;">
-            <img src="../imgs/home.jpg" class="home-img" alt="sound board">
+            <img src="../imgs/home.jpg" class="{{ Auth::user() ? 'home-img' : 'home-img logged-out' }}" alt="sound board">
         </div>
         <div class="centered welcome-text">
             Vitaj{{ Auth::user() ? ' ' . Auth::user()->name : '' }}!

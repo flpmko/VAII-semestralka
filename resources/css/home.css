@@ -32,6 +32,9 @@
     filter: brightness(50%);
     z-index: -1;
 }
+.logged-out {
+    min-height: 100vh;
+}
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -87,4 +90,10 @@
 .btn-home:hover {
     box-shadow: 0 0 10px 4px rgba(202, 93, 3, 0.5);
     width: 300px;
+}
+
+@media screen and (max-width: 700px) {
+    .carrousel {
+        box-sizing: border-box;
+    }
 }

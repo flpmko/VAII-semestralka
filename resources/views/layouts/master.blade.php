@@ -11,7 +11,9 @@
 
 <body>
     @include('includes.navbar')
-    @yield('obsah')
+    <div class="container-for-footer">
+        @yield('obsah')
+    </div>
     @include('includes.footer')
 </body>
 

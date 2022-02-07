@@ -36,3 +36,6 @@ body {
 .mailto {
     color: #c7c7c7;
 }
+.container-for-footer {
+    min-height: 100vh;
+}
