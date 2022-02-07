@@ -19,7 +19,7 @@
             <div class="item-75 account-greet">
                 <h1 class="">Môj účet</h1>
                 <h2 class="">Ahoj{{ Auth::user() ? ' ' . Auth::user()->name : '' }}!</h2>
-                <h2 class="">Odtiaľto si môžeš menežovať svoj profil a osobné údaje.</h2>
+                <p class="sub">Odtiaľto si môžeš menežovať svoj profil a osobné údaje.</p>
             </div>
             <div class="item-25 item-avatar">
                 <img class="avatar" src="../imgs/account.png" alt="avatar">

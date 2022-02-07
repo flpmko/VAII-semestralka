@@ -21,7 +21,7 @@
     transform: translate(-50%, -50%);
 }
 .welcome-text {
-    font-size: 150px;
+    font-size:15vw;
     font-weight: bold;
 }
 .home-img {
@@ -94,6 +94,16 @@
 
 @media screen and (max-width: 700px) {
     .carrousel {
-        box-sizing: border-box;
+        flex-direction: column;
+    }
+    .search-bar.logs {
+        flex-direction: column;
+    }
+    .card {
+        width: 95%;
+        align-items: center;
+    }
+    .card:hover {
+        width: 100%;
     }
 }

@@ -136,3 +136,9 @@ td:nth-child(1) {
     cursor: pointer;
     transition: 0.3s;
 }
+
+@media screen and (max-width: 500px) {
+    .search-bar {
+        flex-direction: column;
+    }
+}

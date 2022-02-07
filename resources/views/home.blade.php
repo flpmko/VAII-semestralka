@@ -1,13 +1,13 @@
 @extends("layouts.master")
 @section('obsah')
     <div class="container-home">
-        <div style="z-index: -1;">
+        <div style="z-index: -1; padding-bottom: 0;">
             <img src="../imgs/home.jpg" class="{{ Auth::user() ? 'home-img' : 'home-img logged-out' }}" alt="sound board">
         </div>
         <div class="centered welcome-text">
             Vitaj{{ Auth::user() ? ' ' . Auth::user()->name : '' }}!
             @guest
-                <div class="search-bar">
+                <div class="search-bar logs">
                     <button type="button" class="btn-home"><a href="login">Prihlásiť</a></button>
                     <button type="button" class="btn-home"><a href="register">Registrovať</a></button>
                 </div>
