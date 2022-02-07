@@ -48,8 +48,3 @@ Route::get('account-edit/{id}', [UserController::class, 'edit']);
 Route::post('account-update', [UserController::class, 'update'])->name('account-update');
 
 require __DIR__.'/auth.php';
-
-//TODO
-//filtrovanie v tabulke itemov
-//responzivny dizajn
-//vymazanie stareho obrazku pri nahrati noveho

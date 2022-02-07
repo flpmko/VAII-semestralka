@@ -50,3 +50,30 @@ window.confirmAction = function (action, itemType, itemName, itemId) {
             break;
     }
 };
+
+const { default: axios } = require("axios");
+
+const quantity = document.querySelectorAll(".quantity");
+if (quantity) {
+    for (let i = 0; i < quantity.length; i++) {
+        const element = quantity[i];
+        element.addEventListener("input", () => {
+            sendToApi(element.dataset.id, element.value);
+        });
+    }
+}
+
+function sendToApi(id, value) {
+    axios
+        .post("/api/quantity", {
+            // headers: { 'Authorization' : 'Bearer '+ api_token},
+            id: parseInt(value),
+            quantity: value,
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}

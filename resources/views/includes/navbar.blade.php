@@ -3,12 +3,12 @@
         <img src="../imgs/ez-logo.svg" class="logo-image" alt="logo">
         DOMOV
     </a>
-    <a href="#" class="hamburger">
+    <a href="#" class="hamburger" id="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
     </a>
-    <div class="links">
+    <div class="links" id="links">
         <a href="{{ Auth::user() ? route('items-page') : route('login') }}"
             class="{{ Request::routeIs('items-page') ? 'active' : '' }}">INVENTÁR</a>
         <a href="{{ Auth::user() ? route('rentals-page') : route('login') }}"
@@ -20,7 +20,7 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 @auth
-                    <button id="logOutButton" type="submit" class="log-out-button">
+                    <button id="logOutButton1" type="submit" class="log-out-button">
                         <img src="../imgs/icons/log-out.png" alt="log-out" class="logo-image-small">
                         Odhlásiť
                     </button>
@@ -52,7 +52,7 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     @auth
-                        <button id="logOutButton" type="submit" class="log-out-button">
+                        <button id="logOutButton2" type="submit" class="log-out-button">
                             <img src="../imgs/icons/log-out.png" alt="log-out" class="logo-image-small">
                             Odhlásiť
                         </button>

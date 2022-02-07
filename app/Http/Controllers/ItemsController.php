@@ -160,4 +160,12 @@ class ItemsController extends Controller
 
         return redirect('items');
     }
+
+    public function changeQuantity(Request $request) {
+        $request->validate(["quantity" => ['reuqired', 'int']]);
+        $item = Item::findOrFail($request->id);
+        $item->quantity = $request->quantity;
+        $item->save();
+    }
+
 }

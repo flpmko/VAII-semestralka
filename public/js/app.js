@@ -2211,7 +2211,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!*******************************!*\
   !*** ./resources/js/items.js ***!
   \*******************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 window.searchItems = function () {
   var input, filter, table, tr, td, i, txtValue;
@@ -2272,6 +2272,36 @@ window.confirmAction = function (action, itemType, itemName, itemId) {
       break;
   }
 };
+
+var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
+    axios = _require["default"];
+
+var quantity = document.querySelectorAll(".quantity");
+
+if (quantity) {
+  var _loop = function _loop(i) {
+    var element = quantity[i];
+    element.addEventListener("input", function () {
+      sendToApi(element.dataset.id, element.value);
+    });
+  };
+
+  for (var i = 0; i < quantity.length; i++) {
+    _loop(i);
+  }
+}
+
+function sendToApi(id, value) {
+  axios.post("/api/quantity", {
+    // headers: { 'Authorization' : 'Bearer '+ api_token},
+    id: parseInt(value),
+    quantity: value
+  }).then(function (response) {
+    console.log(response);
+  })["catch"](function (error) {
+    console.log(error);
+  });
+}
 
 /***/ }),
 
