@@ -2292,6 +2292,12 @@ function setSrcByClass(elementId, src) {
   }
 }
 
+var toggleButton = document.getElementsByClassName('hamburger')[0];
+var navbarLinks = document.getElementsByClassName('links')[0];
+toggleButton.addEventListener('click', function () {
+  navbarLinks.classList.toggle('active');
+});
+
 /***/ }),
 
 /***/ "./resources/js/new-item.js":
