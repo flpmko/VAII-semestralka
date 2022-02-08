@@ -32,7 +32,8 @@ Tu je užívateľ privítaný a zobrazia sa mu rýchle informácie. Zobrazia sa 
 ### Inventár
 V inventári sú všetky technické zariadenia firmy, ktoré majú zamestnanci k dispozícií na používanie. Pri každom zariadení sú užitočné informácie a vždy je tu zobrazený aktuálny počet kusov daného zariadenia v sklade.
 
-![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory.png)
+#### Admin
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory.png) ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory-user.png)
 
 Užívateľ si môže vyhľadať konkrétne zariadenie pomocou vyhľadávania.
 
