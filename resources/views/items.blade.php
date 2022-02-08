@@ -1,7 +1,7 @@
 @extends("layouts.master")
 @section('obsah')
     @auth
-        <div class="search-bar">
+        <div class="search-bar inv">
             @if ($userInfo != null && $userInfo[0]->admin == 'Y')
                 <button type="button" class="btn-items" onclick="return location.href = 'item-new';">PRIDAŤ</button>
             @endif

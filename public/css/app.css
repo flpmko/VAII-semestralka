@@ -301,6 +301,18 @@ td:nth-child(1) {
     .search-bar {
         flex-direction: column;
     }
+    .search-bar.inv button {
+        width: 95%;
+    }
+    .search-bar.inv input {
+        width: 90vw;
+    }
+    .search-bar.inv button:hover {
+        width: 95%;
+    }
+    .search-bar.inv input:hover {
+        width: 90vw;
+    }
 }
 .rent-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
