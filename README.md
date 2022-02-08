@@ -100,8 +100,27 @@ Po stlačení ikony ceruzky môže používateľ editovať svoje údaje.
 ## Responzívny dizajn
 Tento webový portál je tiež optimalizovaný pre mobilné zariadenia.
 
+### Domov
 <p float="left">
   <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home3-mobile.png" width="33%" />
   <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home1-mobile.png" width="33%" /> 
   <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home2-mobile.png" width="33%" />
+</p>
+
+### Inventár a pôžičky
+<p float="left">
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory-mobile.png" width="50%" />
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/rentals-mobile.png" width="50%" />
+</p>
+
+### Pomoc
+<p float="left">
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/help1-mobile.png" width="50%" />
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/help2-mobile.png" width="50%" />
+</p>
+
+### Účet
+<p float="left">
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/account1-mobile.png" width="50%" />
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/account2-mobile.png" width="50%" />
 </p>
