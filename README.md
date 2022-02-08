@@ -20,7 +20,7 @@ Semestrálna práca z predmetu **Vývoj aplikácií pre internet a intranet**.
 Tento web má slúžiť na evidenciu techniky produkčnej firmy a zároveň evidenciu požičaní, resp. výberov zo skladu techniky. Užívateľ (zamestnanec firmy) si po prihlásení môže vytvoriť novú pôžičku techniky zo skladu, môže požičanú techniku vrátiť alebo si prezrieť techniku v inventári firmy.
 ## Stránky
 ### Domov
-Tu je užívateľ privítaný a zobrazia sa mu rýchle informácie. Zobrazia sa mu 4 posledné požičané prvky, požičané sety techniky, ktoré ešte nevrátil a užívateľom vytvorené sety techniky.
+Tu je užívateľ privítaný a zobrazia sa mu rýchle informácie. Zobrazia sa mu 4 posledné požičané zariadenia a 4 posledné pôžičky techniky, ktoré ešte nevrátil.
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home1.png)
 
@@ -28,16 +28,15 @@ Tu je užívateľ privítaný a zobrazia sa mu rýchle informácie. Zobrazia sa 
 
 
 ### Inventár
-V inventári sú všetky technické zariadenia firmy, ktoré majú zamestnanci k dispozícií na používanie. Užívateľ si môže vyhľadať konkrétne zariadenie pomocou vyhľadávania.
-V tejto podstránke sa taktiež vykonáva vytvorenie pôžičky. Užívateľ si označí zariadenie, ktoré potrebuje, množstvo, ktoré potrebuje a keď má všetko vybraté, stlačí tlačidlo požičať, ktoré je vždy viditeľné.
+V inventári sú všetky technické zariadenia firmy, ktoré majú zamestnanci k dispozícií na používanie. Pri každom zariadení sú užitočné informácie a vždy je tu zobrazený aktuálny počet kusov daného zariadenia v sklade. Užívateľ si môže vyhľadať konkrétne zariadenie pomocou vyhľadávania alebo vytvoriť novú pôžičku stlačením tačidla 'Požičať' (je presmerovaný na stránku vytvorenia pôžičky).
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory.png)
 
-Po stlačení tlačidla 'Pridať', sa zobrazí maska na pridanie nového zariadenia do databázy.
+Admin má zobrazené aj tlačidlo 'Pridať', po ktorého stlačení sa zobrazí maska na pridanie nového zariadenia do databázy.
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/new-item.png)
 
-Pri každom zariadení má používateľ k dispozícií 2 tlačidlá, jedno na vymazanie zariadenia z databázy a druhé na úpravu vlastností zariadenia.
+Pri každom zariadení má admin k dispozícií 2 tlačidlá, jedno na vymazanie zariadenia z databázy a druhé na úpravu vlastností zariadenia.
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/edit-item.png)
 
@@ -48,8 +47,8 @@ Tu sú zobrazené všetky pôžičky používateľa. Aktívne aj minulé, jasne 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/rentals.png)
 
 
-### Info
-Informácie o webe, návod na použitie a podobne.
+### Pomoc
+Informácie o webe, návod na použitie a podobne. Užívateľ vidí iba jednotlivé články, no admin vie každý článok upraviť, alebo vymazať alebo pridať nový.
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/about.png)
 
