@@ -100,5 +100,5 @@ Po stlačení ikony ceruzky môže používateľ editovať svoje údaje.
 ## Responzívny dizajn
 Tento webový portál je tiež optimalizovaný pre mobilné zariadenia.
 
-![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home3-mobile.png) ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home1-mobile.png) ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home2-mobile.png)
+| ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home3-mobile.png) | ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home1-mobile.png) | ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home2-mobile.png) |
 
