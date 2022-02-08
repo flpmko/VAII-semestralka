@@ -72,6 +72,8 @@ Informácie o webe, návod na použitie a podobne. Užívateľ vidí iba jednotl
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/help2.png)
 
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/new-article.png)
+
 
 ### Účet
 Na tomto mieste môže používateľ spravovať svoje údaje.
@@ -94,3 +96,9 @@ Po stlačení ikony ceruzky môže používateľ editovať svoje údaje.
 ### Registračná obrazovka
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/register-page.png)
+
+## Responzívny dizajn
+Tento webový portál je tiež optimalizovaný pre mobilné zariadenia.
+
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home3-mobile.png) ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home1-mobile.png) ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home2-mobile.png)
+
