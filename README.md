@@ -32,7 +32,11 @@ Tu je užívateľ privítaný a zobrazia sa mu rýchle informácie. Zobrazia sa 
 ### Inventár
 V inventári sú všetky technické zariadenia firmy, ktoré majú zamestnanci k dispozícií na používanie. Pri každom zariadení sú užitočné informácie a vždy je tu zobrazený aktuálny počet kusov daného zariadenia v sklade.
 
+#### Admin
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory.png)
+
+#### Používateľ
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory-user.png)
 
 Užívateľ si môže vyhľadať konkrétne zariadenie pomocou vyhľadávania.
 
@@ -60,10 +64,15 @@ Tu sú zobrazené všetky pôžičky používateľa. Aktívne aj minulé, jasne 
 ### Pomoc
 Informácie o webe, návod na použitie a podobne. Užívateľ vidí iba jednotlivé články, no admin vie každý článok upraviť, alebo vymazať alebo pridať nový.
 
+#### Používateľ
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/help-user.png)
+
+#### Admin
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/help1.png)
 
-
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/help2.png)
+
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/new-article.png)
 
 
 ### Účet
@@ -87,3 +96,26 @@ Po stlačení ikony ceruzky môže používateľ editovať svoje údaje.
 ### Registračná obrazovka
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/register-page.png)
+
+## Responzívny dizajn
+Tento webový portál je tiež optimalizovaný pre mobilné zariadenia.
+
+### Domov
+<p float="left">
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home3-mobile.png" width="33%" />
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home1-mobile.png" width="33%" /> 
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home2-mobile.png" width="33%" />
+</p>
+
+### Inventár, pôžičky a pomoc
+<p float="left">
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory-mobile.png" width="33%" />
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/rentals-mobile.png" width="33%" />
+    <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/help-mobile.png" width="33%" />
+</p>
+
+### Účet
+<p float="left">
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/account1-mobile.png" width="49%" />
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/account2-mobile.png" width="49%" />
+</p>
