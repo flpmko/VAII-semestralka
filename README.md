@@ -22,15 +22,25 @@ Tento web má slúžiť na evidenciu techniky produkčnej firmy a zároveň evid
 ### Domov
 Tu je užívateľ privítaný a zobrazia sa mu rýchle informácie. Zobrazia sa mu 4 posledné požičané zariadenia a 4 posledné pôžičky techniky, ktoré ešte nevrátil.
 
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home3.png)
+
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home1.png)
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home2.png)
 
 
 ### Inventár
-V inventári sú všetky technické zariadenia firmy, ktoré majú zamestnanci k dispozícií na používanie. Pri každom zariadení sú užitočné informácie a vždy je tu zobrazený aktuálny počet kusov daného zariadenia v sklade. Užívateľ si môže vyhľadať konkrétne zariadenie pomocou vyhľadávania alebo vytvoriť novú pôžičku stlačením tačidla 'Požičať' (je presmerovaný na stránku vytvorenia pôžičky).
+V inventári sú všetky technické zariadenia firmy, ktoré majú zamestnanci k dispozícií na používanie. Pri každom zariadení sú užitočné informácie a vždy je tu zobrazený aktuálny počet kusov daného zariadenia v sklade.
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory.png)
+
+Užívateľ si môže vyhľadať konkrétne zariadenie pomocou vyhľadávania.
+
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory-search.png)
+
+Stlačením tačidla 'Požičať' je presmerovaný na stránku vytvorenia novej pôžičky, kde si vyberie konkrétne zariadenia, ktoré potrebuje na akciu.
+
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/new-rental.png)
 
 Admin má zobrazené aj tlačidlo 'Pridať', po ktorého stlačení sa zobrazí maska na pridanie nového zariadenia do databázy.
 
@@ -50,7 +60,10 @@ Tu sú zobrazené všetky pôžičky používateľa. Aktívne aj minulé, jasne 
 ### Pomoc
 Informácie o webe, návod na použitie a podobne. Užívateľ vidí iba jednotlivé články, no admin vie každý článok upraviť, alebo vymazať alebo pridať nový.
 
-![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/about.png)
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/help1.png)
+
+
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/help2.png)
 
 
 ### Účet
