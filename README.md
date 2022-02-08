@@ -33,7 +33,10 @@ Tu je užívateľ privítaný a zobrazia sa mu rýchle informácie. Zobrazia sa 
 V inventári sú všetky technické zariadenia firmy, ktoré majú zamestnanci k dispozícií na používanie. Pri každom zariadení sú užitočné informácie a vždy je tu zobrazený aktuálny počet kusov daného zariadenia v sklade.
 
 #### Admin
-![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory.png) ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory-user.png)
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory.png)
+
+#### Používateľ
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/inventory-user.png)
 
 Užívateľ si môže vyhľadať konkrétne zariadenie pomocou vyhľadávania.
 
@@ -61,8 +64,11 @@ Tu sú zobrazené všetky pôžičky používateľa. Aktívne aj minulé, jasne 
 ### Pomoc
 Informácie o webe, návod na použitie a podobne. Užívateľ vidí iba jednotlivé články, no admin vie každý článok upraviť, alebo vymazať alebo pridať nový.
 
-![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/help1.png)
+#### Používateľ
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/help-user.png)
 
+#### Admin
+![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/help1.png)
 
 ![alt text](https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/help2.png)
 
