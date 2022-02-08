@@ -101,7 +101,7 @@ Po stlačení ikony ceruzky môže používateľ editovať svoje údaje.
 Tento webový portál je tiež optimalizovaný pre mobilné zariadenia.
 
 <p float="left">
-  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home3-mobile.png" width="100" />
-  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home1-mobile.png" width="100" /> 
-  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home2-mobile.png" width="100" />
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home3-mobile.png" width="33%" />
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home1-mobile.png" width="33%" /> 
+  <img src="https://github.com/flpmko/VAII-semestralka/blob/master/public/imgs/screens/home2-mobile.png" width="33%" />
 </p>
